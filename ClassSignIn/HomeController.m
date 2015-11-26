@@ -8,8 +8,9 @@
 
 #import "HomeController.h"
 #import "LoginViewController.h"
+#import "ClassViewController.h"
 
-@interface HomeController ()
+@interface HomeController () 
 
 @end
 
@@ -18,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.delegate = self;
+    [self setTitle:@"课堂"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -35,6 +37,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - delegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    NSLog(@"--->>>%@",viewController);
+    if ([viewController isKindOfClass:[ClassViewController class]]) {
+        [self setTitle:@"课堂"];
+    }
+    else {
+        [self setTitle:@"我的"];
+    }
+}
 
 #pragma mark - Navigation
 
