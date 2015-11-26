@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.30588235289999999" green="0.67843137249999996" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我的" id="jm2-Wa-dz5"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="my" id="jm2-Wa-dz5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9p-hi-LCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,4 +104,7 @@
             <point key="canvasLocation" x="293" y="452"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="my" width="25" height="25"/>
+    </resources>
 </document>

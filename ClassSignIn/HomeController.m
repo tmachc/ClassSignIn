@@ -25,8 +25,8 @@
 {
     [super viewDidAppear:animated];
     
-    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];;
-    [self presentViewController:loginViewController animated:YES completion:nil];
+//    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];;
+//    [self presentViewController:loginViewController animated:YES completion:nil];
     
 }
 

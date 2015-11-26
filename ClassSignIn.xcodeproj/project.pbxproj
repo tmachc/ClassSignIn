@@ -84,7 +84,6 @@
 				E78AC8181C06A1A600B7082F /* Assets.xcassets */,
 				E78AC81A1C06A1A600B7082F /* LaunchScreen.storyboard */,
 				E78AC81D1C06A1A600B7082F /* Info.plist */,
-				E7FADA5C1C0704EE00991C06 /* image */,
 				E78AC80C1C06A1A600B7082F /* Supporting Files */,
 			);
 			path = ClassSignIn;
@@ -96,13 +95,6 @@
 				E78AC80D1C06A1A600B7082F /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E7FADA5C1C0704EE00991C06 /* image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
