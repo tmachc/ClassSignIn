@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D36934B1C09DF2700C35FE8 /* ClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D36934A1C09DF2700C35FE8 /* ClassCell.m */; };
 		E78AC80E1C06A1A600B7082F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E78AC80D1C06A1A600B7082F /* main.m */; };
 		E78AC8111C06A1A600B7082F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E78AC8101C06A1A600B7082F /* AppDelegate.m */; };
 		E78AC8141C06A1A600B7082F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78AC8131C06A1A600B7082F /* LoginViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D3693491C09DF2700C35FE8 /* ClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCell.h; sourceTree = "<group>"; };
+		2D36934A1C09DF2700C35FE8 /* ClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCell.m; sourceTree = "<group>"; };
 		E78AC8091C06A1A600B7082F /* ClassSignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassSignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78AC80D1C06A1A600B7082F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E78AC80F1C06A1A600B7082F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				E78AC81A1C06A1A600B7082F /* LaunchScreen.storyboard */,
 				E78AC81D1C06A1A600B7082F /* Info.plist */,
 				E78AC80C1C06A1A600B7082F /* Supporting Files */,
+				2D3693491C09DF2700C35FE8 /* ClassCell.h */,
+				2D36934A1C09DF2700C35FE8 /* ClassCell.m */,
 			);
 			path = ClassSignIn;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				E7FADA581C0702B700991C06 /* ClassViewController.m in Sources */,
 				E78AC8111C06A1A600B7082F /* AppDelegate.m in Sources */,
 				E78AC80E1C06A1A600B7082F /* main.m in Sources */,
+				2D36934B1C09DF2700C35FE8 /* ClassCell.m in Sources */,
 				E7FADA531C06EE3600991C06 /* HomeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
