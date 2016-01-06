@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C225D1227A1D200A7D17DC1 /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2A9E1CBFAE092DFC4E7E3 /* View+SnapKit.swift */; };
+		2ABC3D0EEEDB5DF97D328007 /* Pods-ClassSignInSwift-SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF6396AF5CF4554C7D8AD0B3 /* Pods-ClassSignInSwift-SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39CD50423DBB423F8FA39402 /* Pods-ClassSignInSwift-SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DFE17606A3650F78927428 /* Pods-ClassSignInSwift-SnapKit-dummy.m */; };
+		3FBBF313FC54C66F5AE3AA5C /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6224C24D801BBF9DE838AB /* ConstraintDescription.swift */; };
+		4414224D082789301A829D56 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E1267C8864B02CF4E7A94 /* EdgeInsets.swift */; };
+		5E84B08E622F2B9547A944EB /* Pods-ClassSignInSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7530D0092C5B403AEF565FF5 /* Pods-ClassSignInSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6519AA49932174BC4A7A5005 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7867E638AB7616234274A7A /* ConstraintAttributes.swift */; };
+		7E4220859A059594CEDBD748 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BA40D4B21E7EB36C3EA722 /* ConstraintMaker.swift */; };
+		829558A15A565A6752A0B5C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F68B440CEBD9D3A27040332 /* Foundation.framework */; };
+		84BDC6935CCCEA43C54D4BF1 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177E9EF91A588B000BD220A /* Constraint.swift */; };
+		88C245349F48D517EA121075 /* Pods-ClassSignInSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B29A9491A8C25C74B429D /* Pods-ClassSignInSwift-dummy.m */; };
+		8F6E16D49BD81CFCC787124E /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3BA0FD967CFA223D82EA5 /* ConstraintItem.swift */; };
+		BA4B4FA73D7605759568C6AA /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD7EBD68C7CD2AF0D732D9 /* LayoutConstraint.swift */; };
+		BDD82EE0DADF8BE8D9F1C383 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7587BFEA775B0C78662CE023 /* ConstraintRelation.swift */; };
+		C92794993324A25972B2159C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F68B440CEBD9D3A27040332 /* Foundation.framework */; };
+		E2AF8E3313B688A5C4D05193 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9AB025FE0755E72E35F4A4 /* SnapKit.swift */; };
+		EC6FD8E6E9BC32631B158243 /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0A9B5A4CD59DB2D0A2401 /* ViewController+SnapKit.swift */; };
+		FE96516AE6F01B179608849F /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFEDE6CD054597F94E6EDE6 /* Debugging.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B238EF46FB2BB633F3F6C593 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A474E74DDF5A66C8894614F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF8E05EEFC58A8447119D16C;
+			remoteInfo = "Pods-ClassSignInSwift-SnapKit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0185E1215BCFB1AE62F5616E /* Pods-ClassSignInSwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ClassSignInSwift-acknowledgements.markdown"; sourceTree = "<group>"; };
+		03C39654256CE262740CB552 /* Pods-ClassSignInSwift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ClassSignInSwift-resources.sh"; sourceTree = "<group>"; };
+		045365E7C732B27CDA326414 /* Pods-ClassSignInSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ClassSignInSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		06F0A9B5A4CD59DB2D0A2401 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ViewController+SnapKit.swift"; path = "Source/ViewController+SnapKit.swift"; sourceTree = "<group>"; };
+		10644D0A979E04D4D9C4BE31 /* Pods-ClassSignInSwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ClassSignInSwift-acknowledgements.plist"; sourceTree = "<group>"; };
+		11D44E8BF4A6F60C9786EC66 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20BFC1564D6FAA479687FBD9 /* Pods_ClassSignInSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassSignInSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25D1189032F35C9C23C9D535 /* Pods-ClassSignInSwift-SnapKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ClassSignInSwift-SnapKit-Private.xcconfig"; sourceTree = "<group>"; };
+		39FB109E5531FCFD09886B63 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6EAA72F3599158CEF3A6D4 /* Pods-ClassSignInSwift-SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ClassSignInSwift-SnapKit.modulemap"; sourceTree = "<group>"; };
+		4E0943CC617CE80F70795C73 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5866C529C8A815696DD996E7 /* Pods-ClassSignInSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ClassSignInSwift.modulemap"; sourceTree = "<group>"; };
+		5FFEDE6CD054597F94E6EDE6 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
+		6EEC86BA5AA8504C022E9D89 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F68B440CEBD9D3A27040332 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7177E9EF91A588B000BD220A /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
+		7530D0092C5B403AEF565FF5 /* Pods-ClassSignInSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ClassSignInSwift-umbrella.h"; sourceTree = "<group>"; };
+		7587BFEA775B0C78662CE023 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
+		819B29A9491A8C25C74B429D /* Pods-ClassSignInSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ClassSignInSwift-dummy.m"; sourceTree = "<group>"; };
+		87D2A9E1CBFAE092DFC4E7E3 /* View+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+SnapKit.swift"; path = "Source/View+SnapKit.swift"; sourceTree = "<group>"; };
+		8EAD7EBD68C7CD2AF0D732D9 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
+		934E1267C8864B02CF4E7A94 /* EdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EdgeInsets.swift; path = Source/EdgeInsets.swift; sourceTree = "<group>"; };
+		A9F3BA0FD967CFA223D82EA5 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
+		AD9AB025FE0755E72E35F4A4 /* SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapKit.swift; path = Source/SnapKit.swift; sourceTree = "<group>"; };
+		AFAD20F6DD9AB62C4107C7AB /* Pods-ClassSignInSwift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ClassSignInSwift-frameworks.sh"; sourceTree = "<group>"; };
+		BBDA86FD4F8EBE35CB079323 /* Pods-ClassSignInSwift-SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ClassSignInSwift-SnapKit.xcconfig"; sourceTree = "<group>"; };
+		BC75CC0C6216B3A8EDE66EC8 /* Pods-ClassSignInSwift-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ClassSignInSwift-environment.h"; sourceTree = "<group>"; };
+		CD6224C24D801BBF9DE838AB /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
+		E848C921693DBBCE956FED1B /* Pods-ClassSignInSwift-SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ClassSignInSwift-SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		E8DFE17606A3650F78927428 /* Pods-ClassSignInSwift-SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ClassSignInSwift-SnapKit-dummy.m"; sourceTree = "<group>"; };
+		EF6396AF5CF4554C7D8AD0B3 /* Pods-ClassSignInSwift-SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ClassSignInSwift-SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		F206089D8A0A3F14D5E05D46 /* Pods-ClassSignInSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ClassSignInSwift.release.xcconfig"; sourceTree = "<group>"; };
+		F5BA40D4B21E7EB36C3EA722 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
+		F7867E638AB7616234274A7A /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15C60C8118AF8B3D1F4D5118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				829558A15A565A6752A0B5C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78358BCC7D01BD09073D96F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C92794993324A25972B2159C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27DA6A11F4D9521FCD336EAF = {
+			isa = PBXGroup;
+			children = (
+				4E0943CC617CE80F70795C73 /* Podfile */,
+				96D25224A419125C12140614 /* Frameworks */,
+				D38CE69529394726950BBE61 /* Pods */,
+				7CFB7E64B36FEA94F8BC8D24 /* Products */,
+				33B37E9647A2B7446AD81F4E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		33B37E9647A2B7446AD81F4E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				41F6C6449074B864809461A6 /* Pods-ClassSignInSwift */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		41F6C6449074B864809461A6 /* Pods-ClassSignInSwift */ = {
+			isa = PBXGroup;
+			children = (
+				39FB109E5531FCFD09886B63 /* Info.plist */,
+				5866C529C8A815696DD996E7 /* Pods-ClassSignInSwift.modulemap */,
+				0185E1215BCFB1AE62F5616E /* Pods-ClassSignInSwift-acknowledgements.markdown */,
+				10644D0A979E04D4D9C4BE31 /* Pods-ClassSignInSwift-acknowledgements.plist */,
+				819B29A9491A8C25C74B429D /* Pods-ClassSignInSwift-dummy.m */,
+				BC75CC0C6216B3A8EDE66EC8 /* Pods-ClassSignInSwift-environment.h */,
+				AFAD20F6DD9AB62C4107C7AB /* Pods-ClassSignInSwift-frameworks.sh */,
+				03C39654256CE262740CB552 /* Pods-ClassSignInSwift-resources.sh */,
+				7530D0092C5B403AEF565FF5 /* Pods-ClassSignInSwift-umbrella.h */,
+				045365E7C732B27CDA326414 /* Pods-ClassSignInSwift.debug.xcconfig */,
+				F206089D8A0A3F14D5E05D46 /* Pods-ClassSignInSwift.release.xcconfig */,
+			);
+			name = "Pods-ClassSignInSwift";
+			path = "Target Support Files/Pods-ClassSignInSwift";
+			sourceTree = "<group>";
+		};
+		53EFA5AAB09C0E37E434CB7B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6EEC86BA5AA8504C022E9D89 /* Info.plist */,
+				3F6EAA72F3599158CEF3A6D4 /* Pods-ClassSignInSwift-SnapKit.modulemap */,
+				BBDA86FD4F8EBE35CB079323 /* Pods-ClassSignInSwift-SnapKit.xcconfig */,
+				25D1189032F35C9C23C9D535 /* Pods-ClassSignInSwift-SnapKit-Private.xcconfig */,
+				E8DFE17606A3650F78927428 /* Pods-ClassSignInSwift-SnapKit-dummy.m */,
+				E848C921693DBBCE956FED1B /* Pods-ClassSignInSwift-SnapKit-prefix.pch */,
+				EF6396AF5CF4554C7D8AD0B3 /* Pods-ClassSignInSwift-SnapKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-ClassSignInSwift-SnapKit";
+			sourceTree = "<group>";
+		};
+		62F44F46D46AFE596F08F132 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6F68B440CEBD9D3A27040332 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7CFB7E64B36FEA94F8BC8D24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20BFC1564D6FAA479687FBD9 /* Pods_ClassSignInSwift.framework */,
+				11D44E8BF4A6F60C9786EC66 /* SnapKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96D25224A419125C12140614 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62F44F46D46AFE596F08F132 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B526AA451690FA511E70B397 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				7177E9EF91A588B000BD220A /* Constraint.swift */,
+				F7867E638AB7616234274A7A /* ConstraintAttributes.swift */,
+				CD6224C24D801BBF9DE838AB /* ConstraintDescription.swift */,
+				A9F3BA0FD967CFA223D82EA5 /* ConstraintItem.swift */,
+				F5BA40D4B21E7EB36C3EA722 /* ConstraintMaker.swift */,
+				7587BFEA775B0C78662CE023 /* ConstraintRelation.swift */,
+				5FFEDE6CD054597F94E6EDE6 /* Debugging.swift */,
+				934E1267C8864B02CF4E7A94 /* EdgeInsets.swift */,
+				8EAD7EBD68C7CD2AF0D732D9 /* LayoutConstraint.swift */,
+				AD9AB025FE0755E72E35F4A4 /* SnapKit.swift */,
+				87D2A9E1CBFAE092DFC4E7E3 /* View+SnapKit.swift */,
+				06F0A9B5A4CD59DB2D0A2401 /* ViewController+SnapKit.swift */,
+				53EFA5AAB09C0E37E434CB7B /* Support Files */,
+			);
+			path = SnapKit;
+			sourceTree = "<group>";
+		};
+		D38CE69529394726950BBE61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B526AA451690FA511E70B397 /* SnapKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		07E7F88CB260419097437ABB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ABC3D0EEEDB5DF97D328007 /* Pods-ClassSignInSwift-SnapKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9AC3ECB72FDFC116402249 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E84B08E622F2B9547A944EB /* Pods-ClassSignInSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AF8E05EEFC58A8447119D16C /* Pods-ClassSignInSwift-SnapKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF7EBBA445B6F3911DEFA87E /* Build configuration list for PBXNativeTarget "Pods-ClassSignInSwift-SnapKit" */;
+			buildPhases = (
+				00E8A23C77487E6955B0F4F2 /* Sources */,
+				78358BCC7D01BD09073D96F9 /* Frameworks */,
+				07E7F88CB260419097437ABB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ClassSignInSwift-SnapKit";
+			productName = "Pods-ClassSignInSwift-SnapKit";
+			productReference = 11D44E8BF4A6F60C9786EC66 /* SnapKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EE127948D58ED80A872049B3 /* Pods-ClassSignInSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B9930543F639DDE53DFB2D6 /* Build configuration list for PBXNativeTarget "Pods-ClassSignInSwift" */;
+			buildPhases = (
+				E1006CF1C38BD24987D1E4B1 /* Sources */,
+				15C60C8118AF8B3D1F4D5118 /* Frameworks */,
+				1D9AC3ECB72FDFC116402249 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD5F8A8365CE58E51D234A03 /* PBXTargetDependency */,
+			);
+			name = "Pods-ClassSignInSwift";
+			productName = "Pods-ClassSignInSwift";
+			productReference = 20BFC1564D6FAA479687FBD9 /* Pods_ClassSignInSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A474E74DDF5A66C8894614F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+			};
+			buildConfigurationList = 07DFAD16EBDE77C23921D86C /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 27DA6A11F4D9521FCD336EAF;
+			productRefGroup = 7CFB7E64B36FEA94F8BC8D24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE127948D58ED80A872049B3 /* Pods-ClassSignInSwift */,
+				AF8E05EEFC58A8447119D16C /* Pods-ClassSignInSwift-SnapKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E8A23C77487E6955B0F4F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BDC6935CCCEA43C54D4BF1 /* Constraint.swift in Sources */,
+				6519AA49932174BC4A7A5005 /* ConstraintAttributes.swift in Sources */,
+				3FBBF313FC54C66F5AE3AA5C /* ConstraintDescription.swift in Sources */,
+				8F6E16D49BD81CFCC787124E /* ConstraintItem.swift in Sources */,
+				7E4220859A059594CEDBD748 /* ConstraintMaker.swift in Sources */,
+				BDD82EE0DADF8BE8D9F1C383 /* ConstraintRelation.swift in Sources */,
+				FE96516AE6F01B179608849F /* Debugging.swift in Sources */,
+				4414224D082789301A829D56 /* EdgeInsets.swift in Sources */,
+				BA4B4FA73D7605759568C6AA /* LayoutConstraint.swift in Sources */,
+				39CD50423DBB423F8FA39402 /* Pods-ClassSignInSwift-SnapKit-dummy.m in Sources */,
+				E2AF8E3313B688A5C4D05193 /* SnapKit.swift in Sources */,
+				0C225D1227A1D200A7D17DC1 /* View+SnapKit.swift in Sources */,
+				EC6FD8E6E9BC32631B158243 /* ViewController+SnapKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1006CF1C38BD24987D1E4B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C245349F48D517EA121075 /* Pods-ClassSignInSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD5F8A8365CE58E51D234A03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-ClassSignInSwift-SnapKit";
+			target = AF8E05EEFC58A8447119D16C /* Pods-ClassSignInSwift-SnapKit */;
+			targetProxy = B238EF46FB2BB633F3F6C593 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2006F727BE8C731AFAD0DEFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F206089D8A0A3F14D5E05D46 /* Pods-ClassSignInSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ClassSignInSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-ClassSignInSwift/Pods-ClassSignInSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ClassSignInSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3F1A9CB85849E57A09A248C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55952AB5E17F7C5DC6B31B4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 045365E7C732B27CDA326414 /* Pods-ClassSignInSwift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ClassSignInSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-ClassSignInSwift/Pods-ClassSignInSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ClassSignInSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B47AE00915389226D4B3A38A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B9F1F2BDDAB24CD9A77A61CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D1189032F35C9C23C9D535 /* Pods-ClassSignInSwift-SnapKit-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-ClassSignInSwift-SnapKit/Pods-ClassSignInSwift-SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-ClassSignInSwift-SnapKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-ClassSignInSwift-SnapKit/Pods-ClassSignInSwift-SnapKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F93A78946D19B798D3DF068E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D1189032F35C9C23C9D535 /* Pods-ClassSignInSwift-SnapKit-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-ClassSignInSwift-SnapKit/Pods-ClassSignInSwift-SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-ClassSignInSwift-SnapKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-ClassSignInSwift-SnapKit/Pods-ClassSignInSwift-SnapKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07DFAD16EBDE77C23921D86C /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47AE00915389226D4B3A38A /* Debug */,
+				3F1A9CB85849E57A09A248C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B9930543F639DDE53DFB2D6 /* Build configuration list for PBXNativeTarget "Pods-ClassSignInSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55952AB5E17F7C5DC6B31B4A /* Debug */,
+				2006F727BE8C731AFAD0DEFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF7EBBA445B6F3911DEFA87E /* Build configuration list for PBXNativeTarget "Pods-ClassSignInSwift-SnapKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F93A78946D19B798D3DF068E /* Debug */,
+				B9F1F2BDDAB24CD9A77A61CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A474E74DDF5A66C8894614F /* Project object */;
+}
