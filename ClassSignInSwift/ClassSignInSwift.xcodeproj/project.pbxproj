@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DC89BF91C422D4B00A0D4AA /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */; };
+		2DC89BFB1C423AEF00A0D4AA /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */; };
 		E7276E641C3BA27D00E4B2A7 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E5F1C3BA27D00E4B2A7 /* ClassTableViewCell.swift */; };
 		E7276E651C3BA27D00E4B2A7 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E601C3BA27D00E4B2A7 /* ClassViewController.swift */; };
 		E7276E671C3BA27D00E4B2A7 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E631C3BA27D00E4B2A7 /* MyViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
+		2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		58DE70037FADEF81AD404966 /* Pods_ClassSignInSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassSignInSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC93D23969DA821306D4E3E /* Pods-ClassSignInSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassSignInSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassSignInSwift/Pods-ClassSignInSwift.release.xcconfig"; sourceTree = "<group>"; };
 		7C6CE344444D75B7173F7E87 /* Pods-ClassSignInSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassSignInSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClassSignInSwift/Pods-ClassSignInSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +113,9 @@
 				E7276E6C1C3BC18300E4B2A7 /* OneClassController.swift */,
 				E7276E6F1C3BC1B400E4B2A7 /* HomeworkViewController.swift */,
 				E7276E711C3BC1D100E4B2A7 /* NoticeViewController.swift */,
+				2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */,
 				E7276E6B1C3BC18300E4B2A7 /* AttendanceViewController.swift */,
+				2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */,
 			);
 			path = OneClass;
 			sourceTree = "<group>";
@@ -277,10 +283,12 @@
 				E7276E641C3BA27D00E4B2A7 /* ClassTableViewCell.swift in Sources */,
 				E7276E671C3BA27D00E4B2A7 /* MyViewController.swift in Sources */,
 				E7276E721C3BC1D100E4B2A7 /* NoticeViewController.swift in Sources */,
+				2DC89BFB1C423AEF00A0D4AA /* NoticeTableViewCell.swift in Sources */,
 				E7FADA211C06E41200991C06 /* AppDelegate.swift in Sources */,
 				E7276E701C3BC1B400E4B2A7 /* HomeworkViewController.swift in Sources */,
 				E7276E6D1C3BC18300E4B2A7 /* AttendanceViewController.swift in Sources */,
 				E7276E651C3BA27D00E4B2A7 /* ClassViewController.swift in Sources */,
+				2DC89BF91C422D4B00A0D4AA /* AttendanceTableViewCell.swift in Sources */,
 				E7FADA501C06EC9000991C06 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
