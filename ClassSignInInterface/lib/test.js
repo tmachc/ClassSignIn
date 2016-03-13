@@ -8,6 +8,14 @@ var log4js = require('log4js');
 var logger = log4js.getLogger('normal');
 var UserProvider = require("../modules/dao/UserProvider").UserProvider;
 var userProvider = new UserProvider();
+var HomeworkProvider = require("../modules/dao/HomeworkProvider").HomeworkProvider;
+var homeworkProvider = new HomeworkProvider();
+var NoticeProvider = require("../modules/dao/NoticeProvider").NoticeProvider;
+var noticeProvider = new NoticeProvider();
+var SignInProvider = require("../modules/dao/SignInProvider").SignInProvider;
+var signInProvider = new SignInProvider();
+var ClassProvider = require("../modules/dao/ClassProvider").ClassProvider;
+var classProvider = new ClassProvider();
 
 
 exports.initData = function(req,callback){
@@ -21,6 +29,15 @@ exports.initData = function(req,callback){
         "age" : 24,
         "type" : "teacher"
     };
+    //userProvider.insert(teacher,{},function(err){
+    //    if (err) {
+    //        logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+    //        callback(global.warnCode.adminDbError);
+    //    }
+    //    //else {
+    //    //    callback({"result":true,"isSuccess":true,message:""});
+    //    //}
+    //});
     var student = {
         "_id" : new ObjectID(),
         "phone" : "18210277823",
@@ -31,6 +48,12 @@ exports.initData = function(req,callback){
         "age" : 21,
         "type" : "student"
     };
+    //userProvider.insert(student,{},function(err){
+    //    if (err) {
+    //        logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+    //        callback(global.warnCode.adminDbError);
+    //    }
+    //});
     var theClass = {
         "_id" : new ObjectID(),
         "teacher" : new ObjectID(teacher._id),
@@ -40,6 +63,12 @@ exports.initData = function(req,callback){
             new ObjectID()
         ]
     };
+    //classProvider.insert(theClass,{},function(err){
+    //    if (err) {
+    //        logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+    //        callback(global.warnCode.adminDbError);
+    //    }
+    //});
     var signIn = {
         "_id" : new ObjectID(),
         "classId" : new ObjectID(theClass._id),
@@ -48,25 +77,43 @@ exports.initData = function(req,callback){
         "classmate" : [
             {
                 "stuId" : new ObjectID(student._id),
-                "stuName" : "付琦",
-                "stuNum" : "2012010945",
+                "stuName" : student.name,
+                "stuNum" : student.num,
                 "signInDate" : new Date()
             }
         ]
     };
+    //signInProvider.insert(signIn,{},function(err){
+    //    if (err) {
+    //        logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+    //        callback(global.warnCode.adminDbError);
+    //    }
+    //});
     var homework = {
         "_id" : new ObjectID(),
         "classId" : new ObjectID(theClass._id),
         "text" : "今天的作业是xxxxxxxxxx",
         "date" : new Date()
     };
+    //homeworkProvider.insert(homework,{},function(err){
+    //    if (err) {
+    //        logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+    //        callback(global.warnCode.adminDbError);
+    //    }
+    //});
     var notice = {
         "_id" : new ObjectID(),
         "classId" : new ObjectID(theClass._id),
         "text" : "今天的课不上了！",
         "date" : new Date()
     };
-    console.log("111");
+    //noticeProvider.insert(notice,{},function(err){
+    //    if (err) {
+    //        logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+    //        callback(global.warnCode.adminDbError);
+    //    }
+    //});
+    //console.log("111");
     //userProvider.find({},{},function(err,result){
     //    console.log("222",err,result);
     //    if (err) {
