@@ -54,6 +54,10 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // ********* MARK: - function
     
+    func getClassData() {
+        
+    }
+    
     // ********* MARK: - table
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

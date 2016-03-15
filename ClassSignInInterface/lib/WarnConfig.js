@@ -7,9 +7,9 @@
  */
 
 global.warnCode={
-    adminDbError:{result:false,message:"数据库错误"},
-    userNotExistError :{result:false,message:"用户不存在"},
-    productNotExistError :{result:false,message:"商品不存在"}
+    adminDbError:{code:"1000", message:"数据库错误"},
+    userNotExistError :{code:"1001", message:"用户不存在"},
+    productNotExistError :{code:"1002", message:"商品不存在"}
 
 };
 global.Url={

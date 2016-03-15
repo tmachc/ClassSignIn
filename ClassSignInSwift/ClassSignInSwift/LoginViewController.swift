@@ -26,14 +26,31 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func clickLogin(sender: UIButton) {
-        //
+        // 先判断输入的是否为空
+        if tfUserName.text == "" {
+            return;
+        }
+        if tfPassword.text == "" {
+            return;
+        }
+        print(HttpUrl + "command=login&num=" + tfUserName.text! + "&password=" + tfPassword.text!)
+        // ******* 网络请求
         Alamofire.request(
             .GET,
-            "http://localhost:7700/v1?command=initData",
+//            HttpUrl,
+//            HttpUrl + "command=login&num=\(tfUserName.text)&password=\(tfPassword.text)",
+            HttpUrl + "command=login&num=" + tfUserName.text! + "&password=" + tfPassword.text!,
+//            parameters: ["command": "login", "num": tfUserName.text!, "password": tfPassword.text!],
             parameters: nil,
             encoding: .JSON,
             headers: nil).responseJSON {
                 response in
+                
+                print("1 --->>> ",response.request)  // original URL request
+                print("2 --->>> ",response.response) // URL response
+                print("3 --->>> ",response.data)     // server data
+                print("4 --->>> ",response.result)   // result of response serialization
+
                 
                 if response.result.isSuccess {
                     print("访问成功")
@@ -47,11 +64,7 @@ class LoginViewController: UIViewController {
                 else {
                     print("访问失败")
                 }
-                
         }
-    
-    
-    
     }
 
     

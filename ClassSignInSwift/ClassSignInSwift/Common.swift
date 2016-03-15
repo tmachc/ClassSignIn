@@ -9,7 +9,7 @@
 import Foundation
 
 /* 接口地址 */
-let url = "http://localhost:7700/v1?"
+let HttpUrl = "http://localhost:7700/v1?"
 
 /* 用于储存信息 Dictionary */
 let userDefault = NSUserDefaults.standardUserDefaults()

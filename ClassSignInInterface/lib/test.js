@@ -12,8 +12,8 @@ var HomeworkProvider = require("../modules/dao/HomeworkProvider").HomeworkProvid
 var homeworkProvider = new HomeworkProvider();
 var NoticeProvider = require("../modules/dao/NoticeProvider").NoticeProvider;
 var noticeProvider = new NoticeProvider();
-var SignInProvider = require("../modules/dao/SignInProvider").SignInProvider;
-var signInProvider = new SignInProvider();
+var AttendanceProvider = require("../modules/dao/AttendanceProvider").AttendanceProvider;
+var attendanceProvider = new AttendanceProvider();
 var ClassProvider = require("../modules/dao/ClassProvider").ClassProvider;
 var classProvider = new ClassProvider();
 
@@ -69,21 +69,23 @@ exports.initData = function(req,callback){
     //        callback(global.warnCode.adminDbError);
     //    }
     //});
-    var signIn = {
+    var attendance = {
         "_id" : new ObjectID(),
         "classId" : new ObjectID(theClass._id),
-        "date" : new Date(),
-        "note" : "抽查签到",
+        "state" : "1", // 1,正在签到 2,结束签到
+        "attendanceDate" : new Date(),
+        "attendanceName" : "抽查签到",
         "classmate" : [
             {
                 "stuId" : new ObjectID(student._id),
                 "stuName" : student.name,
                 "stuNum" : student.num,
-                "signInDate" : new Date()
+                "attendanceState" : "4",
+                "attendanceTime" : new Date()
             }
         ]
     };
-    //signInProvider.insert(signIn,{},function(err){
+    //attendanceProvider.insert(attendance,{},function(err){
     //    if (err) {
     //        logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
     //        callback(global.warnCode.adminDbError);
@@ -92,8 +94,9 @@ exports.initData = function(req,callback){
     var homework = {
         "_id" : new ObjectID(),
         "classId" : new ObjectID(theClass._id),
-        "text" : "今天的作业是xxxxxxxxxx",
-        "date" : new Date()
+        "homeworkName" : "15号作业",
+        "homeworkContent" : "今天的作业是xxxxxxxxxx",
+        "homeworkDate" : new Date()
     };
     //homeworkProvider.insert(homework,{},function(err){
     //    if (err) {
@@ -104,8 +107,9 @@ exports.initData = function(req,callback){
     var notice = {
         "_id" : new ObjectID(),
         "classId" : new ObjectID(theClass._id),
-        "text" : "今天的课不上了！",
-        "date" : new Date()
+        "noticeName" : "停课通知",
+        "noticeContent" : "今天的课不上了！",
+        "noticeDate" : new Date()
     };
     //noticeProvider.insert(notice,{},function(err){
     //    if (err) {
@@ -128,7 +132,7 @@ exports.initData = function(req,callback){
         "code" : 0,
         "student" : student,
         "theClass" : theClass,
-        "signIn" : signIn,
+        "attendance" : attendance,
         "homework" : homework,
         "notice" : notice
     });

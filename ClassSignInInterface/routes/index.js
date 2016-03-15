@@ -6,6 +6,7 @@ var express = require('express');
 var router = express.Router();
 
 var test = require('../lib/test');
+var user = require('../lib/user');
 
 /* GET home page. */
 router.all('/', function(req, res, next) {

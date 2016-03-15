@@ -10,50 +10,35 @@ var UserProvider = require("../modules/dao/UserProvider").UserProvider;
 var userProvider = new UserProvider();
 
 exports.login = function(req, callback) {
-    var teacher = {
-        "_id" : new ObjectID(),
-        "phone" : "15010243108",
-        "password" : "123",
-        "name" : "韩冲",
-        "num" : "2010011182",
-        "sex" : "男",
-        "age" : 24,
-        "type" : "teacher"
-    };
-    var phone = req.query.phone;
     var password = req.query.password;
-    var name = req.query.name;
     var num = req.query.num;
-    var sex = req.query.sex;
-    var age = req.query.age;
-    var type = req.query.type;
-    var user = {
-        "_id" : new ObjectID(),
-        "phone" : phone,
-        "password" : password,
-        "name" : name,
-        "num" : num,
-        "sex" : sex,
-        "age" : age,
-        "type" : type
-    };
+    console.log("num--->>>",num);
     userProvider.findOne({"num" : num}, {}, function(err, result){
-        console.log("phone--->>>",num);
         console.log("result--->>>",result);
         if (err) {
             // 数据库错误
-            logger.warn(global.warnCode.userNotExistError,":",req.url,req.body);
-            callback(global.warnCode.userNotExistError);
+            logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+            callback(global.warnCode.adminDbError);
         }
         else if (result == null) {
             // 没有找到结果(没有这个学号的人)
+            logger.warn(global.warnCode.userNotExistError,":",req.url,req.body);
+            callback(global.warnCode.userNotExistError);
         }
         else {
             if (password == result.password) {
                 // 密码相同 登录成功
+                callback({
+                    "code": "0",
+                    "user": result
+                });
             }
             else {
                 // 密码不同 登录失败
+                callback({
+                    code: "1004",
+                    message: "用户名或密码错误"
+                });
             }
         }
     });

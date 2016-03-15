@@ -29,11 +29,23 @@ class HomeController: UITabBarController {
         // 判断是否登录了 
         // 没登陆跳登录页 
         // 登陆了判断 type 获取课程列表
-//        self.performSegueWithIdentifier("login", sender: nil)
         
-        print(self.viewControllers?.first)
-        let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
-        
+        if (userDefault.objectForKey("num") != nil) {
+            // 登录了
+            let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
+            let type : String = userDefault.objectForKey("type") as! String
+            if (type == "teacher") {
+                // 老师端
+            }
+            else {
+                // 学生端
+            }
+            classViewController.getClassData()
+        }
+        else {
+            // 没登录，去登录
+            self.performSegueWithIdentifier("login", sender: nil)
+        }
     }
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
