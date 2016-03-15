@@ -55,3 +55,7 @@ build/Release
 node_modules
 
 ClassSignInInterface/.idea/workspace.xml
+
+*.iml
+
+*.xml
