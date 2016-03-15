@@ -8,12 +8,38 @@
 
 import UIKit
 
-class HomeworkViewController: UIViewController {
+class HomeworkViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var table: UITableView!
+    
+    var arrHomeworkData = [Dictionary<String, String>]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        // 获取通知数据
+        arrHomeworkData = [
+            [
+                "homeworkName": "放假",
+                "homeworkDate": "1月10日 22:22",
+                "homeworkContent": "没作业！！！！"
+            ],
+            [
+                "homeworkName": "开学",
+                "homeworkDate": "2月10日 22:22",
+                "homeworkContent": "没作业！！！！没作业！！！！"
+            ],
+            [
+                "homeworkName": "考试",
+                "homeworkDate": "3月10日 22:22",
+                "homeworkContent": "没作业！！！！没作业！！！！没作业！！！！"
+            ]
+        ]
+        
+        // 刷新列表
+        self.table.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +57,19 @@ class HomeworkViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - table
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrHomeworkData.count
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 200
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: HomeworkTableViewCell = tableView.dequeueReusableCellWithIdentifier("homeworkCellID") as! HomeworkTableViewCell
+        cell.dicHomeworkData = arrHomeworkData[indexPath.row]
+        return cell
+    }
 
 }

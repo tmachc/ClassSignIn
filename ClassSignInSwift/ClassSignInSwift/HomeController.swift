@@ -15,6 +15,9 @@ class HomeController: UITabBarController {
         // Do any additional setup after loading the view.
         print("hello world")
         
+        userDefault.setObject("aaa", forKey: "A")
+        print(NSUserDefaults.standardUserDefaults(), userDefault)
+        print(userDefault.objectForKey("A"))
         
         let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addClass:")
         self.navigationItem.rightBarButtonItem = itemRight
@@ -23,8 +26,14 @@ class HomeController: UITabBarController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        // 判断是否登录了 没登陆跳登录页
+        // 判断是否登录了 
+        // 没登陆跳登录页 
+        // 登陆了判断 type 获取课程列表
 //        self.performSegueWithIdentifier("login", sender: nil)
+        
+        print(self.viewControllers?.first)
+        let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
+        
     }
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {

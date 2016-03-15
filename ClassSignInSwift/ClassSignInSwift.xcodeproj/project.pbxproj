@@ -16,6 +16,8 @@
 		E7276E6E1C3BC18300E4B2A7 /* OneClassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E6C1C3BC18300E4B2A7 /* OneClassController.swift */; };
 		E7276E701C3BC1B400E4B2A7 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E6F1C3BC1B400E4B2A7 /* HomeworkViewController.swift */; };
 		E7276E721C3BC1D100E4B2A7 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E711C3BC1D100E4B2A7 /* NoticeViewController.swift */; };
+		E7E8FA3A1C97EC5F004C95B9 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8FA391C97EC5F004C95B9 /* HomeworkTableViewCell.swift */; };
+		E7E8FA3C1C97FACD004C95B9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8FA3B1C97FACD004C95B9 /* Common.swift */; };
 		E7FADA211C06E41200991C06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FADA201C06E41200991C06 /* AppDelegate.swift */; };
 		E7FADA261C06E41200991C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FADA241C06E41200991C06 /* Main.storyboard */; };
 		E7FADA281C06E41200991C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FADA271C06E41200991C06 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		E7276E6C1C3BC18300E4B2A7 /* OneClassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneClassController.swift; sourceTree = "<group>"; };
 		E7276E6F1C3BC1B400E4B2A7 /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
 		E7276E711C3BC1D100E4B2A7 /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		E7E8FA391C97EC5F004C95B9 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
+		E7E8FA3B1C97FACD004C95B9 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E7FADA1D1C06E41200991C06 /* ClassSignInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassSignInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FADA201C06E41200991C06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7FADA251C06E41200991C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			children = (
 				E7276E6C1C3BC18300E4B2A7 /* OneClassController.swift */,
 				E7276E6F1C3BC1B400E4B2A7 /* HomeworkViewController.swift */,
+				E7E8FA391C97EC5F004C95B9 /* HomeworkTableViewCell.swift */,
 				E7276E711C3BC1D100E4B2A7 /* NoticeViewController.swift */,
 				2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */,
 				E7276E6B1C3BC18300E4B2A7 /* AttendanceViewController.swift */,
@@ -145,6 +150,7 @@
 				E7FADA241C06E41200991C06 /* Main.storyboard */,
 				E7FADA661C08568200991C06 /* LoginViewController.swift */,
 				E7FADA4F1C06EC9000991C06 /* HomeController.swift */,
+				E7E8FA3B1C97FACD004C95B9 /* Common.swift */,
 				E7276E5E1C3BA27D00E4B2A7 /* Class */,
 				E7276E621C3BA27D00E4B2A7 /* My */,
 				E7FADA271C06E41200991C06 /* Assets.xcassets */,
@@ -284,10 +290,12 @@
 				E7276E671C3BA27D00E4B2A7 /* MyViewController.swift in Sources */,
 				E7276E721C3BC1D100E4B2A7 /* NoticeViewController.swift in Sources */,
 				2DC89BFB1C423AEF00A0D4AA /* NoticeTableViewCell.swift in Sources */,
+				E7E8FA3C1C97FACD004C95B9 /* Common.swift in Sources */,
 				E7FADA211C06E41200991C06 /* AppDelegate.swift in Sources */,
 				E7276E701C3BC1B400E4B2A7 /* HomeworkViewController.swift in Sources */,
 				E7276E6D1C3BC18300E4B2A7 /* AttendanceViewController.swift in Sources */,
 				E7276E651C3BA27D00E4B2A7 /* ClassViewController.swift in Sources */,
+				E7E8FA3A1C97EC5F004C95B9 /* HomeworkTableViewCell.swift in Sources */,
 				2DC89BF91C422D4B00A0D4AA /* AttendanceTableViewCell.swift in Sources */,
 				E7FADA501C06EC9000991C06 /* HomeController.swift in Sources */,
 			);
@@ -351,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -389,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -403,6 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ClassSignInSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmachc.ClassSignInSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +425,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ClassSignInSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmachc.ClassSignInSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";

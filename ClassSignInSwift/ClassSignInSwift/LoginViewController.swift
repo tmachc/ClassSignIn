@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class LoginViewController: UIViewController {
 
@@ -26,7 +27,28 @@ class LoginViewController: UIViewController {
     
     @IBAction func clickLogin(sender: UIButton) {
         //
-    
+        Alamofire.request(
+            .GET,
+            "http://localhost:7700/v1?command=initData",
+            parameters: nil,
+            encoding: .JSON,
+            headers: nil).responseJSON {
+                response in
+                
+                if response.result.isSuccess {
+                    print("访问成功")
+                    if let JSON = response.result.value {
+                        print("JSON -->> \(JSON)")
+                    }
+                    else {
+                        print("没有返回值")
+                    }
+                }
+                else {
+                    print("访问失败")
+                }
+                
+        }
     
     
     
