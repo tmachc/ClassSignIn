@@ -7,6 +7,7 @@ var router = express.Router();
 
 var test = require('../lib/test');
 var user = require('../lib/user');
+var theClass = require('../lib/class');
 
 /* GET home page. */
 router.all('/', function(req, res, next) {
@@ -70,6 +71,11 @@ login = function(req, callback) {
 
 // ************************ 课程部分
 // 添加,修改课程
+editClass = function(req, callback) {
+  theClass.editClass(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // ************************ 作业部分
 // 添加,修改作业

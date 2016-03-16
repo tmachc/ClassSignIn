@@ -29,14 +29,14 @@ exports.login = function(req, callback) {
             if (password == result.password) {
                 // 密码相同 登录成功
                 callback({
-                    "code": "0",
+                    "code": 0,
                     "user": result
                 });
             }
             else {
                 // 密码不同 登录失败
                 callback({
-                    code: "1004",
+                    code: 1004,
                     message: "用户名或密码错误"
                 });
             }
