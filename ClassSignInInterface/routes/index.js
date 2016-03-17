@@ -77,6 +77,13 @@ editClass = function(req, callback) {
   });
 };
 
+// 获取课程列表
+getClassList = function(req, callback) {
+  theClass.getClassList(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
+
 // ************************ 作业部分
 // 添加,修改作业
 

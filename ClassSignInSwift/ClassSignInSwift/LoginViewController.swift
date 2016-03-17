@@ -13,16 +13,15 @@ import Alamofire
 class LoginViewController: UIViewController {
 
     @IBOutlet var tfUserName: UITextField!
-    
     @IBOutlet var tfPassword: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.navigationBarHidden = true
         
         // Do any additional setup after loading the view.
-       
+        
     }
     
     @IBAction func clickLogin(sender: UIButton) {
@@ -33,41 +32,23 @@ class LoginViewController: UIViewController {
         if tfPassword.text == "" {
             return;
         }
-        print(HttpUrl + "command=login&num=" + tfUserName.text! + "&password=" + tfPassword.text!)
+        
         // ******* 网络请求
-        Alamofire.request(
-            .GET,
-//            HttpUrl,
-//            HttpUrl + "command=login&num=\(tfUserName.text)&password=\(tfPassword.text)",
-            HttpUrl + "command=login&num=" + tfUserName.text! + "&password=" + tfPassword.text!,
-//            parameters: ["command": "login", "num": tfUserName.text!, "password": tfPassword.text!],
-            parameters: nil,
-            encoding: .JSON,
-            headers: nil).responseJSON {
-                response in
+        HttpManager.defaultManager.getRequest(
+            url: HttpUrl,
+            params: ["command": "login", "num": tfUserName.text!, "password": tfPassword.text!])
+            { (result) -> Void in
                 
-                print("1 --->>> ",response.request)  // original URL request
-                print("2 --->>> ",response.response) // URL response
-                print("3 --->>> ",response.data)     // server data
-                print("4 --->>> ",response.result)   // result of response serialization
-
-                
-                if response.result.isSuccess {
-                    print("访问成功")
-                    if let JSON = response.result.value {
-                        print("JSON -->> \(JSON)")
-                    }
-                    else {
-                        print("没有返回值")
-                    }
+                if result["code"]!.isEqual(0) {
+                    userDefault.registerDefaults(result["user"] as! [String: AnyObject])
+                    self.navigationController?.popViewControllerAnimated(true)
+                    self.navigationController?.navigationBarHidden = false
                 }
                 else {
-                    print("访问失败")
+                    
                 }
         }
     }
-
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

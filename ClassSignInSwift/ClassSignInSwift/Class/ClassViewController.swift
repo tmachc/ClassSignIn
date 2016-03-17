@@ -25,12 +25,12 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
             [
                 "className": "高数",
                 "teacher": "韩老师",
-                "classID": "123456"
+                "classId": "123456"
             ],
             [
                 "className": "线代",
                 "teacher": "付老师",
-                "classID": "456789"
+                "classId": "456789"
             ]
         ]
     }
@@ -55,7 +55,12 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
     // ********* MARK: - function
     
     func getClassData() {
-        
+        HttpManager.defaultManager.getRequest(
+            url: HttpUrl,
+            params: ["command": "getClassList", "userId": userDefault.objectForKey("_id")!, "type": userDefault.objectForKey("type")!])
+        { (result) -> Void in
+            
+        }
     }
     
     // ********* MARK: - table

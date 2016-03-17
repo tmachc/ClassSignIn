@@ -7,17 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("hello world")
-        
-        userDefault.setObject("aaa", forKey: "A")
-        print(NSUserDefaults.standardUserDefaults(), userDefault)
-        print(userDefault.objectForKey("A"))
         
         let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addClass:")
         self.navigationItem.rightBarButtonItem = itemRight
@@ -33,8 +29,7 @@ class HomeController: UITabBarController {
         if (userDefault.objectForKey("num") != nil) {
             // 登录了
             let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
-            let type : String = userDefault.objectForKey("type") as! String
-            if (type == "teacher") {
+            if (String)(userDefault.objectForKey("type")) == "teacher" {
                 // 老师端
             }
             else {
@@ -62,7 +57,25 @@ class HomeController: UITabBarController {
     }
 
     @IBAction func addClass(sender: UIButton) {
-        
+        if userDefault.objectForKey("type")!.isEqual("teacher") {
+            // 创建课程
+            HttpManager.defaultManager.getRequest(
+                url: HttpUrl,
+                params: ["command": "editClass", "className": "swift", "teacher": userDefault.objectForKey("_id")!],
+                complete:
+            { (result) -> Void in
+                if result["code"]!.isEqual(0) {
+                    let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
+                    classViewController.getClassData()
+                }
+            })
+        }
+        else {
+            // 加入课程
+        }
     }
     
 }
+
+
+

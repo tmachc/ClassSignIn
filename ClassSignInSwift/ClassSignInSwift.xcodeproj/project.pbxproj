@@ -18,6 +18,7 @@
 		E7276E721C3BC1D100E4B2A7 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E711C3BC1D100E4B2A7 /* NoticeViewController.swift */; };
 		E7E8FA3A1C97EC5F004C95B9 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8FA391C97EC5F004C95B9 /* HomeworkTableViewCell.swift */; };
 		E7E8FA3C1C97FACD004C95B9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8FA3B1C97FACD004C95B9 /* Common.swift */; };
+		E7EF2FA11C9A9CD400DC2110 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF2FA01C9A9CD400DC2110 /* HttpManager.swift */; };
 		E7FADA211C06E41200991C06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FADA201C06E41200991C06 /* AppDelegate.swift */; };
 		E7FADA261C06E41200991C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FADA241C06E41200991C06 /* Main.storyboard */; };
 		E7FADA281C06E41200991C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FADA271C06E41200991C06 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		E7276E711C3BC1D100E4B2A7 /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		E7E8FA391C97EC5F004C95B9 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
 		E7E8FA3B1C97FACD004C95B9 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E7EF2FA01C9A9CD400DC2110 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		E7FADA1D1C06E41200991C06 /* ClassSignInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassSignInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FADA201C06E41200991C06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7FADA251C06E41200991C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				E7FADA661C08568200991C06 /* LoginViewController.swift */,
 				E7FADA4F1C06EC9000991C06 /* HomeController.swift */,
 				E7E8FA3B1C97FACD004C95B9 /* Common.swift */,
+				E7EF2FA01C9A9CD400DC2110 /* HttpManager.swift */,
 				E7276E5E1C3BA27D00E4B2A7 /* Class */,
 				E7276E621C3BA27D00E4B2A7 /* My */,
 				E7FADA271C06E41200991C06 /* Assets.xcassets */,
@@ -290,6 +293,7 @@
 				E7276E671C3BA27D00E4B2A7 /* MyViewController.swift in Sources */,
 				E7276E721C3BC1D100E4B2A7 /* NoticeViewController.swift in Sources */,
 				2DC89BFB1C423AEF00A0D4AA /* NoticeTableViewCell.swift in Sources */,
+				E7EF2FA11C9A9CD400DC2110 /* HttpManager.swift in Sources */,
 				E7E8FA3C1C97FACD004C95B9 /* Common.swift in Sources */,
 				E7FADA211C06E41200991C06 /* AppDelegate.swift in Sources */,
 				E7276E701C3BC1B400E4B2A7 /* HomeworkViewController.swift in Sources */,
