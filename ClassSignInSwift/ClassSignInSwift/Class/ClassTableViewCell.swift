@@ -30,8 +30,8 @@ class ClassTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
         labClassName.text = dicClassData["className"]
-        labClassID.text = dicClassData["classId"]
-        labTeacher.text = dicClassData["teacher"]
+        labClassID.text = dicClassData["classNum"]
+        labTeacher.text = dicClassData["teacherName"]
         if selected {
             self.selected = false  // 点击cell 选中效果立即消失
         }

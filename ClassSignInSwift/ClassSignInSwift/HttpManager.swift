@@ -27,7 +27,9 @@ class HttpManager {
             for (key, value) in params! {
                 strParam += "\(key)=\(value)&"
             }
+            strParam = strParam.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
         }
+        print("httpUrl --->>> ",url + strParam)
         Alamofire.request(.GET, url + strParam, parameters: nil, encoding: .JSON, headers: nil).responseJSON {
             response in
             

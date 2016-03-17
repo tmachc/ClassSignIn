@@ -24,13 +24,13 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
         arrClassData = [
             [
                 "className": "高数",
-                "teacher": "韩老师",
-                "classId": "123456"
+                "teacherId": "韩老师",
+                "classNum": "123456"
             ],
             [
                 "className": "线代",
-                "teacher": "付老师",
-                "classId": "456789"
+                "teacherId": "付老师",
+                "classNum": "456789"
             ]
         ]
     }
@@ -59,7 +59,10 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
             url: HttpUrl,
             params: ["command": "getClassList", "userId": userDefault.objectForKey("_id")!, "type": userDefault.objectForKey("type")!])
         { (result) -> Void in
-            
+            print(result["list"])
+            let ary = result["list"] as! [Dictionary<String, String>]
+            self.arrClassData = result["list"] as! [Dictionary<String, String>]
+            self.table.reloadData()
         }
     }
     

@@ -20,6 +20,9 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.navigationBarHidden = true
         
+        tfUserName.text = "2010011182"
+        tfPassword.text = "123"
+        
         // Do any additional setup after loading the view.
         
     }
@@ -41,6 +44,9 @@ class LoginViewController: UIViewController {
                 
                 if result["code"]!.isEqual(0) {
                     userDefault.registerDefaults(result["user"] as! [String: AnyObject])
+                    for (key, value) in result["user"] as! [String: AnyObject] {
+                        userDefault.setObject(value, forKey: key)
+                    }
                     self.navigationController?.popViewControllerAnimated(true)
                     self.navigationController?.navigationBarHidden = false
                 }

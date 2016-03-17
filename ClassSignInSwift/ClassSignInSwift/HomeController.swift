@@ -61,7 +61,7 @@ class HomeController: UITabBarController {
             // 创建课程
             HttpManager.defaultManager.getRequest(
                 url: HttpUrl,
-                params: ["command": "editClass", "className": "swift", "teacher": userDefault.objectForKey("_id")!],
+                params: ["command": "editClass", "className": "swift", "teacherId": userDefault.objectForKey("_id")!, "teacherName": userDefault.objectForKey("name")!],
                 complete:
             { (result) -> Void in
                 if result["code"]!.isEqual(0) {
