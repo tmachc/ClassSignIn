@@ -17,6 +17,8 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(superclass)
+        print(self.parentViewController)
         
         // 获取通知数据
         arrHomeworkData = [
@@ -57,6 +59,20 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // ********* MARK: - function
+    
+    func getHomeworkListData() {
+        let oneClassVC = self.parentViewController as! OneClassController
+        HttpManager.defaultManager.getRequest(
+            url: HttpUrl,
+            params: ["command": "getHomeworkList", "userId": userDefault.objectForKey("_id")!, "classId": oneClassVC.dicClassData["classId"]!])
+            { (result) -> Void in
+                print(result["list"])
+                self.arrHomeworkData = result["list"] as! [Dictionary<String, String>]
+                self.table.reloadData()
+        }
+    }
     
     // MARK: - table
     

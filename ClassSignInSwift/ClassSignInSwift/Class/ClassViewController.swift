@@ -13,8 +13,6 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var table: UITableView!
     
     var arrClassData = [Dictionary<String, String>]()
-    var arrClassData1 = [String]()
-    var arrClassData2 = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +58,6 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
             params: ["command": "getClassList", "userId": userDefault.objectForKey("_id")!, "type": userDefault.objectForKey("type")!])
         { (result) -> Void in
             print(result["list"])
-            let ary = result["list"] as! [Dictionary<String, String>]
             self.arrClassData = result["list"] as! [Dictionary<String, String>]
             self.table.reloadData()
         }

@@ -117,7 +117,7 @@ exports.getClassList = function(req, callback) {
                         teacherId : result[i].teacherId,
                         teacherName : result[i].teacherName,
                         classNum : result[i].classNum,
-                        className : result[i].className,
+                        className : result[i].className
                         //createTime : format(result[i].createTime, "yyyy-MM-dd hh:mm:ss"),
                         //updateTime : format(result[i].updateTime, "yyyy-MM-dd hh:mm:ss")
                     };
