@@ -43,7 +43,6 @@ class LoginViewController: UIViewController {
             { (result) -> Void in
                 
                 if result["code"]!.isEqual(0) {
-                    userDefault.registerDefaults(result["user"] as! [String: AnyObject])
                     for (key, value) in result["user"] as! [String: AnyObject] {
                         userDefault.setObject(value, forKey: key)
                     }

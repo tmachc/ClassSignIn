@@ -8,7 +8,9 @@ var router = express.Router();
 var test = require('../lib/test');
 var user = require('../lib/user');
 var theClass = require('../lib/class');
-
+var notice = require('../lib/notice');
+var homework = require('../lib/homework');
+var attendance = require('../lib/attendance');
 /* GET home page. */
 router.all('/', function(req, res, next) {
 //首先获取到命令]
@@ -95,6 +97,11 @@ getClassList = function(req, callback) {
 // 添加,修改通知
 
 // 获取通知列表
+getNoticeList = function(req, callback) {
+  notice.getNoticeList(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // 查看通知
 

@@ -15,6 +15,20 @@ exports.editNotice = function(req, callback) {
 };
 
 exports.getNoticeList = function(req, callback) {
+    var classId = req.query.classId;
+    noticeProvider.find({"classId": classId}, {}, function(err, result) {
+        if (err) {
+            // 数据库错误
+            logger.warn(global.warnCode.adminDbError,":",req.url,req.query);
+            callback(global.warnCode.adminDbError);
+        }
+        else {
+            // result 为数组 没有结果的时候 是空数组[]
+            /*
 
+             */
+            callback({code: 0, list: result});
+        }
+    });
 };
 

@@ -17,12 +17,12 @@ exports.login = function(req, callback) {
         console.log("result--->>>",result);
         if (err) {
             // 数据库错误
-            logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+            logger.warn(global.warnCode.adminDbError,":",req.url,req.query);
             callback(global.warnCode.adminDbError);
         }
         else if (result == null) {
             // 没有找到结果(没有这个学号的人)
-            logger.warn(global.warnCode.userNotExistError,":",req.url,req.body);
+            logger.warn(global.warnCode.userNotExistError,":",req.url,req.query);
             callback(global.warnCode.userNotExistError);
         }
         else {

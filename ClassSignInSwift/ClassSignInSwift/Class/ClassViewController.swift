@@ -55,7 +55,11 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
     func getClassData() {
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: ["command": "getClassList", "userId": userDefault.objectForKey("_id")!, "type": userDefault.objectForKey("type")!])
+            params: [
+                "command": "getClassList",
+                "userId": userDefault.objectForKey("_id")!,
+                "type": userDefault.objectForKey("type")!
+            ])
         { (result) -> Void in
             print(result["list"])
             self.arrClassData = result["list"] as! [Dictionary<String, String>]
