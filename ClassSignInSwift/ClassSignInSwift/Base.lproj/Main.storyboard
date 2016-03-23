@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oo3-Wf-bzP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oo3-Wf-bzP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bNB-Lt-L4j" id="fN5-RV-ptE">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -147,7 +147,7 @@
                             <constraint firstItem="3qb-Qj-BSp" firstAttribute="leading" secondItem="8eP-xC-kKO" secondAttribute="leading" id="yFL-TB-uUP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="课堂" image="my" id="St3-ci-Pxo"/>
+                    <tabBarItem key="tabBarItem" title="课堂" image="class" id="St3-ci-Pxo"/>
                     <navigationItem key="navigationItem" title="课堂" id="CEv-HO-n7W"/>
                     <connections>
                         <outlet property="table" destination="3qb-Qj-BSp" id="o0j-nD-TTO"/>
@@ -178,7 +178,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Yb-ST-vae" id="6fY-Ym-swy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="114.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sa2-ZS-l5u" userLabel="老师的备注">
@@ -248,7 +248,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="考勤" image="my" id="YII-Rb-v3x"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="考勤" image="attendance" id="YII-Rb-v3x"/>
                     <connections>
                         <outlet property="table" destination="fQs-IW-O8D" id="f8q-K7-mWE"/>
                     </connections>
@@ -277,7 +277,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="328"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gri-5h-EjJ" id="hYX-JZ-gEc">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="327.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="327"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MES-UF-hxt" userLabel="通知名称">
@@ -339,7 +339,7 @@
                             <constraint firstItem="2oJ-7q-XWw" firstAttribute="leading" secondItem="mlD-5K-svj" secondAttribute="leading" id="voB-qz-5Zf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="通知" image="my" id="dlz-IX-ith"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="通知" image="notice" id="dlz-IX-ith"/>
                     <connections>
                         <outlet property="table" destination="2oJ-7q-XWw" id="LmU-ep-btc"/>
                     </connections>
@@ -368,7 +368,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzA-Rj-gO2" id="oNH-7k-Gbk">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="217.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -383,7 +383,7 @@
                             <constraint firstItem="ECl-wC-0xj" firstAttribute="leading" secondItem="795-E8-vJ3" secondAttribute="leading" id="rmz-ea-cja"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="作业" image="my" id="SZU-ph-6go"/>
+                    <tabBarItem key="tabBarItem" title="作业" image="homework" id="SZU-ph-6go"/>
                     <connections>
                         <outlet property="table" destination="ECl-wC-0xj" id="1aS-au-h1N"/>
                     </connections>
@@ -511,7 +511,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="attendance" width="25" height="25"/>
+        <image name="class" width="25" height="25"/>
         <image name="hh" width="426" height="640"/>
+        <image name="homework" width="25" height="25"/>
         <image name="my" width="25" height="25"/>
+        <image name="notice" width="25" height="25"/>
     </resources>
 </document>

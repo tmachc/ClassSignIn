@@ -15,8 +15,8 @@ class OneClassController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = dicClassData["className"]
-
-        // Do any additional setup after loading the view.
+        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addClass:")
+        self.navigationItem.rightBarButtonItem = itemRight
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,5 +52,24 @@ class OneClassController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func addClass(sender: UIButton) {
+        if userDefault.objectForKey("type")!.isEqual("teacher") {
+            // 创建课程
+            HttpManager.defaultManager.getRequest(
+                url: HttpUrl,
+                params: ["command": "editClass", "className": "swift", "teacherId": userDefault.objectForKey("_id")!, "teacherName": userDefault.objectForKey("name")!],
+                complete:
+                { (result) -> Void in
+                    if result["code"]!.isEqual(0) {
+                        let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
+                        classViewController.getClassData()
+                    }
+            })
+        }
+        else {
+            // 加入课程
+        }
+    }
 
 }
