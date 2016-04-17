@@ -61,7 +61,7 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
             url: HttpUrl,
             params: ["command": "getNoticeList", "classId": self.strClassId] ) { (result) -> Void in
                 
-                
+                self.arrNoticeData = result["list"] as! [Dictionary<String, String>]
                 self.table.reloadData()
         }
     }

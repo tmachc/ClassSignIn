@@ -55,7 +55,7 @@ exports.editNotice = function(req, callback) {
     }
     else {
         // 更新课程信息
-        noticeProvider.findOne({"noticeId": noticeId}, {}, function(err, result) {
+        noticeProvider.findOne({"noticeId": new ObjectID(noticeId)}, {}, function(err, result) {
             if (err) {
                 // 数据库错误
                 logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
@@ -73,7 +73,7 @@ exports.editNotice = function(req, callback) {
                     noticeDate : noticeDate,
                     updateTime : new Date()
                 };
-                noticeProvider.update({"noticeId": noticeId}, {"$set": json}, function(err) {
+                noticeProvider.update({"noticeId": new ObjectID(noticeId)}, {"$set": json}, function(err) {
                     if (err) {
                         // 数据库错误
                         logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
@@ -90,7 +90,7 @@ exports.editNotice = function(req, callback) {
 
 exports.getNoticeList = function(req, callback) {
     var classId = req.query.classId;
-    noticeProvider.find({"classId": classId}, {}, function(err, result) {
+    noticeProvider.find({"classId": new ObjectID(classId)}, {}, function(err, result) {
         if (err) {
             // 数据库错误
             logger.warn(global.warnCode.adminDbError,":",req.url,req.query);

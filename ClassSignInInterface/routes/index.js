@@ -88,13 +88,28 @@ getClassList = function(req, callback) {
 
 // ************************ 作业部分
 // 添加,修改作业
+editHomework = function(req, callback) {
+  homework.editHomework(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // 获取作业列表
+getHomeworkList = function(req, callback) {
+  homework.getHomeworkList(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // 查看作业
 
 // ************************ 通知部分
 // 添加,修改通知
+editNotice = function(req, callback) {
+  notice.editNotice(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // 获取通知列表
 getNoticeList = function(req, callback) {
@@ -107,6 +122,17 @@ getNoticeList = function(req, callback) {
 
 // ************************ 考勤部分
 // 添加,修改考勤
+editAttendance = function(req, callback) {
+  attendance.editAttendance(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
+
+// 老师 考勤列表
+
+// 老师 一次考勤详情
+
+// 学生 考勤列表
 
 // 学生 签到
 

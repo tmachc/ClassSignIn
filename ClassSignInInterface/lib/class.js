@@ -56,7 +56,7 @@ exports.editClass = function(req, callback) {
     }
     else {
         // 更新课程信息
-        classProvider.findOne({"classId": classId}, {}, function(err, result) {
+        classProvider.findOne({"classId": new ObjectID(classId)}, {}, function(err, result) {
             if (err) {
                 // 数据库错误
                 logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
@@ -74,7 +74,7 @@ exports.editClass = function(req, callback) {
                     "teacherName" : teacherName,
                     updateTime : new Date()
                 };
-                classProvider.update({"classId": classId}, {"$set": json}, function(err) {
+                classProvider.update({"classId": new ObjectID(classId)}, {"$set": json}, function(err) {
                     if (err) {
                         // 数据库错误
                         logger.warn(global.warnCode.adminDbError,":",req.url,req.body);

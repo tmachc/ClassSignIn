@@ -17,30 +17,29 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(superclass)
-        print(self.parentViewController)
-        
         // 获取通知数据
-        arrHomeworkData = [
-            [
-                "homeworkName": "放假",
-                "homeworkDate": "1月10日 22:22",
-                "homeworkContent": "没作业！！！！"
-            ],
-            [
-                "homeworkName": "开学",
-                "homeworkDate": "2月10日 22:22",
-                "homeworkContent": "没作业！！！！没作业！！！！"
-            ],
-            [
-                "homeworkName": "考试",
-                "homeworkDate": "3月10日 22:22",
-                "homeworkContent": "没作业！！！！没作业！！！！没作业！！！！"
-            ]
-        ]
+        self.getHomeworkListData()
         
-        // 刷新列表
-        self.table.reloadData()
+//        arrHomeworkData = [
+//            [
+//                "homeworkName": "放假",
+//                "homeworkDate": "1月10日 22:22",
+//                "homeworkContent": "没作业！！！！"
+//            ],
+//            [
+//                "homeworkName": "开学",
+//                "homeworkDate": "2月10日 22:22",
+//                "homeworkContent": "没作业！！！！没作业！！！！"
+//            ],
+//            [
+//                "homeworkName": "考试",
+//                "homeworkDate": "3月10日 22:22",
+//                "homeworkContent": "没作业！！！！没作业！！！！没作业！！！！"
+//            ]
+//        ]
+//        
+//        // 刷新列表
+//        self.table.reloadData()
         
     }
 
@@ -68,7 +67,6 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
             url: HttpUrl,
             params: ["command": "getHomeworkList", "userId": userDefault.objectForKey("_id")!, "classId": oneClassVC.dicClassData["classId"]!])
             { (result) -> Void in
-                print(result["list"])
                 self.arrHomeworkData = result["list"] as! [Dictionary<String, String>]
                 self.table.reloadData()
         }

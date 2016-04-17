@@ -11,12 +11,15 @@ import UIKit
 class OneClassController: UITabBarController {
     
     var dicClassData = Dictionary<String, String>()
+    var tabbarIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = dicClassData["className"]
-        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addClass:")
-        self.navigationItem.rightBarButtonItem = itemRight
+        if userDefault.objectForKey("type")!.isEqual("teacher") {
+            let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(OneClassController.addClass(_:)))
+            self.navigationItem.rightBarButtonItem = itemRight
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,8 +28,11 @@ class OneClassController: UITabBarController {
     }
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        tabbarIndex = item.tag
         if item.tag == 0 {
             // 作业
+            let vc = self.childViewControllers.first as! HomeworkViewController
+            vc.getHomeworkListData()
         }
         else if item.tag == 2 {
             // 考勤
@@ -54,21 +60,32 @@ class OneClassController: UITabBarController {
     */
     
     @IBAction func addClass(sender: UIButton) {
-        if userDefault.objectForKey("type")!.isEqual("teacher") {
-            // 创建课程
+        if tabbarIndex == 0 {
+            // 创建作业
             HttpManager.defaultManager.getRequest(
                 url: HttpUrl,
-                params: ["command": "editClass", "className": "swift", "teacherId": userDefault.objectForKey("_id")!, "teacherName": userDefault.objectForKey("name")!],
+                params: ["command": "editHomework", "homeworkName": "家庭作业", "homeworkContent": "课文抄10遍", "homeworkDate": "4月10日", "classId": dicClassData["classId"]!],
                 complete:
                 { (result) -> Void in
                     if result["code"]!.isEqual(0) {
-                        let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
-                        classViewController.getClassData()
+                        
+                    }
+            })
+        }
+        else if tabbarIndex == 1 {
+            // 创建通知
+            HttpManager.defaultManager.getRequest(
+                url: HttpUrl,
+                params: ["command": "editNotice", "noticeName": "开课", "noticeContent": "准备开课啦", "noticeDate": "9月10日", "classId": dicClassData["classId"]!],
+                complete:
+                { (result) -> Void in
+                    if result["code"]!.isEqual(0) {
+                        
                     }
             })
         }
         else {
-            // 加入课程
+            // 添加考勤记录
         }
     }
 

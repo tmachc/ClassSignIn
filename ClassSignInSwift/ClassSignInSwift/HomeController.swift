@@ -15,7 +15,7 @@ class HomeController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addClass:")
+        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(HomeController.addClass(_:)))
         self.navigationItem.rightBarButtonItem = itemRight
         // 定义所有子页面返回按钮的名称
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Done, target: nil, action: nil)
@@ -48,7 +48,7 @@ class HomeController: UITabBarController {
         print(item)
         if item.tag == 0 {
             // 课堂
-            let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addClass:")
+            let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(HomeController.addClass(_:)))
             self.navigationItem.rightBarButtonItem = itemRight
         }
         else {

@@ -40,6 +40,7 @@ exports.editHomework = function(req, callback) {
                     createTime: new Date(),
                     updateTime: new Date()
                 };
+                console.log("sdsdsdsd   ",homework);
                 homeworkProvider.insert(homework, {}, function(err) {
                     if (err) {
                         // 数据库错误
@@ -55,7 +56,7 @@ exports.editHomework = function(req, callback) {
     }
     else {
         // 更新课程信息
-        homeworkProvider.findOne({"homeworkId": homeworkId}, {}, function(err, result) {
+        homeworkProvider.findOne({"homeworkId": new ObjectID(homeworkId)}, {}, function(err, result) {
             if (err) {
                 // 数据库错误
                 logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
@@ -73,7 +74,7 @@ exports.editHomework = function(req, callback) {
                     homeworkDate : homeworkDate,
                     updateTime : new Date()
                 };
-                homeworkProvider.update({"homeworkId": homeworkId}, {"$set": json}, function(err) {
+                homeworkProvider.update({"homeworkId": new ObjectID(homeworkId)}, {"$set": json}, function(err) {
                     if (err) {
                         // 数据库错误
                         logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
@@ -100,11 +101,10 @@ exports.getHomeworkList = function(req, callback) {
             var list = [];
             for (var i = 0; i < result.length; i ++) {
                 var json = {
-                    classId : result[i]._id,
-                    teacherId : result[i].teacherId,
-                    teacherName : result[i].teacherName,
-                    classNum : result[i].classNum,
-                    className : result[i].className
+                    homeworkId : result[i]._id,
+                    homeworkName : result[i].homeworkName,
+                    homeworkContent : result[i].homeworkContent,
+                    homeworkDate : result[i].homeworkDate
                     //createTime : format(result[i].createTime, "yyyy-MM-dd hh:mm:ss"),
                     //updateTime : format(result[i].updateTime, "yyyy-MM-dd hh:mm:ss")
                 };

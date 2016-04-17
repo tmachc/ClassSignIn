@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oo3-Wf-bzP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oo3-Wf-bzP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bNB-Lt-L4j" id="fN5-RV-ptE">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -178,7 +178,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Yb-ST-vae" id="6fY-Ym-swy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sa2-ZS-l5u" userLabel="老师的备注">
@@ -277,7 +277,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="328"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gri-5h-EjJ" id="hYX-JZ-gEc">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="327"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="327.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MES-UF-hxt" userLabel="通知名称">
@@ -368,11 +368,58 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzA-Rj-gO2" id="oNH-7k-Gbk">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="217.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdG-GW-JTq" userLabel="作业名称">
+                                                    <rect key="frame" x="8" y="8" width="300" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="0mU-ZH-Q2s"/>
+                                                        <constraint firstAttribute="width" constant="300" id="PLo-mw-zek"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9z-Gx-hxa" userLabel="作业时间">
+                                                    <rect key="frame" x="8" y="56" width="200" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="3qj-0R-dby"/>
+                                                        <constraint firstAttribute="width" constant="200" id="VTh-i8-bJG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Du-aL-M3l" userLabel="作业内容">
+                                                    <rect key="frame" x="8" y="94" width="584" height="115.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="8Du-aL-M3l" secondAttribute="trailing" constant="8" id="5Oa-lE-qg1"/>
+                                                <constraint firstItem="z9z-Gx-hxa" firstAttribute="leading" secondItem="oNH-7k-Gbk" secondAttribute="leading" constant="8" id="Hiu-8L-0ed"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Du-aL-M3l" secondAttribute="bottom" constant="8" id="LKo-Kp-5q8"/>
+                                                <constraint firstItem="8Du-aL-M3l" firstAttribute="leading" secondItem="oNH-7k-Gbk" secondAttribute="leading" constant="8" id="OfJ-jb-XaP"/>
+                                                <constraint firstItem="IdG-GW-JTq" firstAttribute="leading" secondItem="oNH-7k-Gbk" secondAttribute="leading" constant="8" id="cB5-LM-7D3"/>
+                                                <constraint firstItem="z9z-Gx-hxa" firstAttribute="top" secondItem="IdG-GW-JTq" secondAttribute="bottom" constant="8" id="dS1-7s-E6a"/>
+                                                <constraint firstItem="IdG-GW-JTq" firstAttribute="top" secondItem="oNH-7k-Gbk" secondAttribute="top" constant="8" id="dmX-wJ-AxO"/>
+                                                <constraint firstItem="8Du-aL-M3l" firstAttribute="top" secondItem="z9z-Gx-hxa" secondAttribute="bottom" constant="8" id="qGf-Si-KMP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labHomeworkContent" destination="8Du-aL-M3l" id="n19-sm-Ivy"/>
+                                            <outlet property="labHomeworkDate" destination="z9z-Gx-hxa" id="WsP-gf-Wk0"/>
+                                            <outlet property="labHomeworkName" destination="IdG-GW-JTq" id="Mua-8e-E0b"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hqY-8s-Bbw" id="ei0-Rt-uXc"/>
+                                    <outlet property="delegate" destination="hqY-8s-Bbw" id="9qi-CW-9VN"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
