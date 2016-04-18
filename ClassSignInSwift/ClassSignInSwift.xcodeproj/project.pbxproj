@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D541CC41CC52FEE008D9322 /* AddNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */; };
 		2DC89BF91C422D4B00A0D4AA /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */; };
 		2DC89BFB1C423AEF00A0D4AA /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */; };
 		E7276E641C3BA27D00E4B2A7 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E5F1C3BA27D00E4B2A7 /* ClassTableViewCell.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClassViewController.swift; sourceTree = "<group>"; };
 		2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		58DE70037FADEF81AD404966 /* Pods_ClassSignInSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassSignInSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				E7FADA241C06E41200991C06 /* Main.storyboard */,
 				E7FADA661C08568200991C06 /* LoginViewController.swift */,
 				E7FADA4F1C06EC9000991C06 /* HomeController.swift */,
+				2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */,
 				E7276E5E1C3BA27D00E4B2A7 /* Class */,
 				E7276E621C3BA27D00E4B2A7 /* My */,
 				E7E8FA3B1C97FACD004C95B9 /* Common.swift */,
@@ -289,6 +292,7 @@
 			files = (
 				E7FADA671C08568200991C06 /* LoginViewController.swift in Sources */,
 				E7276E6E1C3BC18300E4B2A7 /* OneClassController.swift in Sources */,
+				2D541CC41CC52FEE008D9322 /* AddNewClassViewController.swift in Sources */,
 				E7276E641C3BA27D00E4B2A7 /* ClassTableViewCell.swift in Sources */,
 				E7276E671C3BA27D00E4B2A7 /* MyViewController.swift in Sources */,
 				E7276E721C3BC1D100E4B2A7 /* NoticeViewController.swift in Sources */,

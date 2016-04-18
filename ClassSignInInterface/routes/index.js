@@ -86,6 +86,13 @@ getClassList = function(req, callback) {
   });
 };
 
+// 学生 加入课程
+addToClass = function(req, callback) {
+  theClass.addToClass(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
+
 // ************************ 作业部分
 // 添加,修改作业
 editHomework = function(req, callback) {

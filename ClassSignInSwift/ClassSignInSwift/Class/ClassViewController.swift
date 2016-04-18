@@ -11,6 +11,7 @@ import UIKit
 class ClassViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet var table: UITableView!
+    @IBOutlet var activity: UIActivityIndicatorView!
     
     var arrClassData = [Dictionary<String, String>]()
 

@@ -104,7 +104,7 @@ exports.getClassList = function(req, callback) {
     var userId = req.query.userId;
     if (type == "teacher") {
         classProvider.find({teacherId: new ObjectID(userId)}, {}, function(err, result) {
-            if (err || result == null) {
+            if (err) {
                 // 数据库错误
                 logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
                 callback(global.warnCode.adminDbError);
@@ -128,10 +128,71 @@ exports.getClassList = function(req, callback) {
         });
     }
     else {
-
+        classProvider.find({"classMate.studentId": userId}, {}, function(err, result){
+            if (err) {
+                // 数据库错误
+                logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+                callback(global.warnCode.adminDbError);
+            }
+            else {
+                var list = [];
+                for (var i = 0; i < result.length; i ++) {
+                    var json = {
+                        classId : result[i]._id,
+                        teacherId : result[i].teacherId,
+                        teacherName : result[i].teacherName,
+                        classNum : result[i].classNum,
+                        className : result[i].className
+                        //createTime : format(result[i].createTime, "yyyy-MM-dd hh:mm:ss"),
+                        //updateTime : format(result[i].updateTime, "yyyy-MM-dd hh:mm:ss")
+                    };
+                    list.push(json)
+                }
+                callback({code: 0, list: list});
+            }
+        });
     }
 };
 
+
+exports.addToClass = function(req, callback) {
+    var studentId = req.query.studentId;
+    var studentName = req.query.studentName;
+    var studentNum = req.query.studentNum;
+    var studentSex = req.query.studentSex;
+    var classNum = req.query.classNum;
+
+    console.log("classNum --->>> ",classNum);
+    classProvider.findOne({classNum: classNum}, {}, function(err, result){
+        console.log("result --->>> ",result);
+        if (err) {
+            // 数据库错误
+            logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+            callback(global.warnCode.adminDbError);
+        }
+        else if (result == null) {
+            callback({code: 1, message: "课程不存在"});
+        }
+        else {
+            var student = {
+                studentId: studentId,
+                studentName: studentName,
+                studentNum: studentNum,
+                studentSex: studentSex
+            };
+            classProvider.update({classNum: classNum}, {"$addToSet":{classMate: student}}, function(err){
+                if (err) {
+                    // 数据库错误
+                    logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
+                    callback(global.warnCode.adminDbError);
+                }
+                else {
+                    callback({code: 0});
+                }
+            });
+        }
+    });
+};
 
 
 //时间格式转换

@@ -15,14 +15,18 @@ class HomeController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(HomeController.addClass(_:)))
-        self.navigationItem.rightBarButtonItem = itemRight
         // 定义所有子页面返回按钮的名称
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Done, target: nil, action: nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.selectedIndex = 0
+        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.addClass))
+        self.navigationItem.rightBarButtonItem = itemRight
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        // 判断是否登录了 
+        // 判断是否登录了
         // 没登陆跳登录页 
         // 登陆了判断 type 获取课程列表
         
@@ -48,7 +52,7 @@ class HomeController: UITabBarController {
         print(item)
         if item.tag == 0 {
             // 课堂
-            let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(HomeController.addClass(_:)))
+            let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.addClass))
             self.navigationItem.rightBarButtonItem = itemRight
         }
         else {
@@ -56,23 +60,8 @@ class HomeController: UITabBarController {
         }
     }
 
-    @IBAction func addClass(sender: UIButton) {
-        if userDefault.objectForKey("type")!.isEqual("teacher") {
-            // 创建课程
-            HttpManager.defaultManager.getRequest(
-                url: HttpUrl,
-                params: ["command": "editClass", "className": "swift", "teacherId": userDefault.objectForKey("_id")!, "teacherName": userDefault.objectForKey("name")!],
-                complete:
-            { (result) -> Void in
-                if result["code"]!.isEqual(0) {
-                    let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
-                    classViewController.getClassData()
-                }
-            })
-        }
-        else {
-            // 加入课程
-        }
+    func addClass(sender: UIButton) {
+        self.performSegueWithIdentifier("addNewClass", sender: nil)
     }
     
 }
