@@ -204,9 +204,6 @@
                                     <outlet property="delegate" destination="EtC-8I-Q4O" id="vpM-om-pC7"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-yZ-CYl">
-                                <rect key="frame" x="0.0" y="290" width="600" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -219,7 +216,6 @@
                     <tabBarItem key="tabBarItem" title="课堂" image="class" id="St3-ci-Pxo"/>
                     <navigationItem key="navigationItem" title="课堂" id="CEv-HO-n7W"/>
                     <connections>
-                        <outlet property="activity" destination="c7k-yZ-CYl" id="DSd-sM-ITU"/>
                         <outlet property="table" destination="3qb-Qj-BSp" id="o0j-nD-TTO"/>
                         <segue destination="kyg-1I-lyD" kind="show" identifier="oneClass" id="sqz-bS-RyK"/>
                     </connections>

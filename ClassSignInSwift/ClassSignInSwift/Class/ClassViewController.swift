@@ -11,7 +11,7 @@ import UIKit
 class ClassViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet var table: UITableView!
-    @IBOutlet var activity: UIActivityIndicatorView!
+    var refreshControl: UIRefreshControl!
     
     var arrClassData = [Dictionary<String, String>]()
 
@@ -32,6 +32,9 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
                 "classNum": "456789"
             ]
         ]
+        self.refreshControl = UIRefreshControl.init()
+        self.refreshControl.addTarget(self, action: #selector(getClassData), forControlEvents: UIControlEvents.ValueChanged)
+        self.table.addSubview(self.refreshControl);
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +68,7 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
             print(result["list"])
             self.arrClassData = result["list"] as! [Dictionary<String, String>]
             self.table.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
     
