@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D541CC41CC52FEE008D9322 /* AddNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */; };
+		2DAADE001CC90D190020F200 /* EditHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAADDFF1CC90D190020F200 /* EditHomeworkViewController.swift */; };
 		2DC89BF91C422D4B00A0D4AA /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */; };
 		2DC89BFB1C423AEF00A0D4AA /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */; };
 		E7276E641C3BA27D00E4B2A7 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276E5F1C3BA27D00E4B2A7 /* ClassTableViewCell.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClassViewController.swift; sourceTree = "<group>"; };
+		2DAADDFF1CC90D190020F200 /* EditHomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHomeworkViewController.swift; sourceTree = "<group>"; };
 		2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		58DE70037FADEF81AD404966 /* Pods_ClassSignInSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassSignInSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				E7276E6C1C3BC18300E4B2A7 /* OneClassController.swift */,
 				E7276E6F1C3BC1B400E4B2A7 /* HomeworkViewController.swift */,
 				E7E8FA391C97EC5F004C95B9 /* HomeworkTableViewCell.swift */,
+				2DAADDFF1CC90D190020F200 /* EditHomeworkViewController.swift */,
 				E7276E711C3BC1D100E4B2A7 /* NoticeViewController.swift */,
 				2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */,
 				E7276E6B1C3BC18300E4B2A7 /* AttendanceViewController.swift */,
@@ -293,6 +296,7 @@
 				E7FADA671C08568200991C06 /* LoginViewController.swift in Sources */,
 				E7276E6E1C3BC18300E4B2A7 /* OneClassController.swift in Sources */,
 				2D541CC41CC52FEE008D9322 /* AddNewClassViewController.swift in Sources */,
+				2DAADE001CC90D190020F200 /* EditHomeworkViewController.swift in Sources */,
 				E7276E641C3BA27D00E4B2A7 /* ClassTableViewCell.swift in Sources */,
 				E7276E671C3BA27D00E4B2A7 /* MyViewController.swift in Sources */,
 				E7276E721C3BC1D100E4B2A7 /* NoticeViewController.swift in Sources */,

@@ -40,7 +40,11 @@ class AddNewClassViewController: UIViewController {
         if userDefault.objectForKey("type")!.isEqual("teacher") {
             HttpManager.defaultManager.getRequest(
                 url: HttpUrl,
-                params: ["command": "editClass", "className": tfClassNum.text!, "teacherId": userDefault.objectForKey("_id")!, "teacherName": userDefault.objectForKey("name")!],
+                params: [
+                    "command": "editClass",
+                    "className": tfClassNum.text!,
+                    "teacherId": userDefault.objectForKey("_id")!,
+                    "teacherName": userDefault.objectForKey("name")!],
                 complete:
                 { (result) -> Void in
                     if result["code"]!.isEqual(0) {

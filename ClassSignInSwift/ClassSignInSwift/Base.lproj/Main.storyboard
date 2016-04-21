@@ -414,6 +414,78 @@
             </objects>
             <point key="canvasLocation" x="3463" y="52"/>
         </scene>
+        <!--添加修改作业-->
+        <scene sceneID="Ejd-dv-vbl">
+            <objects>
+                <viewController id="2j6-4G-HHS" userLabel="添加修改作业" customClass="EditHomeworkViewController" customModule="ClassSignInSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y2I-h7-JUz"/>
+                        <viewControllerLayoutGuide type="bottom" id="7kQ-xn-Ep8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jcS-wd-tZh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作业名称：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-LR-Lcv">
+                                <rect key="frame" x="0.0" y="72" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TIy-Pa-1MM"/>
+                                    <constraint firstAttribute="width" constant="100" id="nbI-Dp-4lv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHh-k3-YZ4">
+                                <rect key="frame" x="108" y="77" width="472" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="BsA-Ly-ig7">
+                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="482945046.88099498">
+                                    <!--2016-04-21 15:24:06 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="截止日期：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zob-Hv-xrA">
+                                <rect key="frame" x="0.0" y="112" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Uq-9O-HVU"/>
+                                    <constraint firstAttribute="width" constant="100" id="Z5i-vQ-cA7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Uq-9O-HVU"/>
+                                        <exclude reference="Z5i-vQ-cA7"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zob-Hv-xrA" firstAttribute="top" secondItem="pkg-LR-Lcv" secondAttribute="bottom" id="5qq-Uo-HG2"/>
+                            <constraint firstItem="BsA-Ly-ig7" firstAttribute="leading" secondItem="jcS-wd-tZh" secondAttribute="leading" id="E0r-nE-N9d"/>
+                            <constraint firstItem="zob-Hv-xrA" firstAttribute="leading" secondItem="pkg-LR-Lcv" secondAttribute="leading" id="EmE-LH-k19"/>
+                            <constraint firstItem="gHh-k3-YZ4" firstAttribute="centerY" secondItem="pkg-LR-Lcv" secondAttribute="centerY" id="GLL-Sz-U0t"/>
+                            <constraint firstAttribute="trailing" secondItem="BsA-Ly-ig7" secondAttribute="trailing" id="GZN-cP-gbB"/>
+                            <constraint firstItem="gHh-k3-YZ4" firstAttribute="top" secondItem="y2I-h7-JUz" secondAttribute="bottom" constant="13" id="RkB-vw-Oos"/>
+                            <constraint firstItem="zob-Hv-xrA" firstAttribute="height" secondItem="pkg-LR-Lcv" secondAttribute="height" id="TDd-jc-VII"/>
+                            <constraint firstItem="pkg-LR-Lcv" firstAttribute="top" secondItem="y2I-h7-JUz" secondAttribute="bottom" constant="8" id="TXz-5O-vaX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gHh-k3-YZ4" secondAttribute="trailing" id="bNw-bl-vVL"/>
+                            <constraint firstItem="zob-Hv-xrA" firstAttribute="width" secondItem="pkg-LR-Lcv" secondAttribute="width" id="eC3-XU-p7Q"/>
+                            <constraint firstItem="gHh-k3-YZ4" firstAttribute="leading" secondItem="pkg-LR-Lcv" secondAttribute="trailing" constant="8" id="fkT-vv-gZb"/>
+                            <constraint firstAttribute="bottom" secondItem="BsA-Ly-ig7" secondAttribute="bottom" id="iI2-66-ny7"/>
+                            <constraint firstItem="pkg-LR-Lcv" firstAttribute="leading" secondItem="jcS-wd-tZh" secondAttribute="leading" id="zTF-g5-e1B"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WiF-dM-BRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3557" y="-767"/>
+        </scene>
         <!--作业-->
         <scene sceneID="hXQ-9c-eyd">
             <objects>
@@ -499,6 +571,7 @@
                     <tabBarItem key="tabBarItem" title="作业" image="homework" id="SZU-ph-6go"/>
                     <connections>
                         <outlet property="table" destination="ECl-wC-0xj" id="1aS-au-h1N"/>
+                        <segue destination="2j6-4G-HHS" kind="show" identifier="editHomework" id="o94-j2-QXj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuu-4V-f8h" userLabel="First Responder" sceneMemberID="firstResponder"/>

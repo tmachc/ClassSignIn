@@ -62,15 +62,9 @@ class OneClassController: UITabBarController {
     @IBAction func addClass(sender: UIButton) {
         if tabbarIndex == 0 {
             // 创建作业
-            HttpManager.defaultManager.getRequest(
-                url: HttpUrl,
-                params: ["command": "editHomework", "homeworkName": "家庭作业", "homeworkContent": "课文抄10遍", "homeworkDate": "4月10日", "classId": dicClassData["classId"]!],
-                complete:
-                { (result) -> Void in
-                    if result["code"]!.isEqual(0) {
-                        
-                    }
-            })
+            
+            let vc = self.childViewControllers.first as! HomeworkViewController
+            vc.performSegueWithIdentifier("editHomework", sender: nil)
         }
         else if tabbarIndex == 1 {
             // 创建通知
