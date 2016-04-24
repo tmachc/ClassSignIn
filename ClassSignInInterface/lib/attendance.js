@@ -21,6 +21,7 @@ exports.editAttendance = function(req, callback) {
         _id: new ObjectID(),
         classId: classId,
         attendanceName: attendanceName,
+        attendanceState: attendanceState,   // 正在签到 结束签到
         date: new Date(),
         classMate: []
     };

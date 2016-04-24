@@ -55,8 +55,9 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "editHomework" {
-            let destinationController = segue.destinationViewController as! OneClassController
-            destinationController.dicClassData = arrClassData[sender!.row]
+            let destinationController = segue.destinationViewController as! EditHomeworkViewController
+            let oneClass = self.parentViewController as! OneClassController
+            destinationController.classId = oneClass.dicClassData["classId"]!
         }
     }
     

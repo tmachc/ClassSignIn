@@ -13,7 +13,6 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var table: UITableView!
     
     var arrNoticeData = [Dictionary<String, String>]()
-    var strClassId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,23 +42,27 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
         self.table.reloadData()
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "editNotice" {
+            let destinationController = segue.destinationViewController as! EditNoticeViewController
+            let oneClass = self.parentViewController as! OneClassController
+            destinationController.classId = oneClass.dicClassData["classId"]!
+        }
     }
-    */
     
     // MARK: - function
     
     func getNoticeListData() {
         
+        let oneClass = self.parentViewController as! OneClassController
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: ["command": "getNoticeList", "classId": self.strClassId] ) { (result) -> Void in
+            params: ["command": "getNoticeList", "classId": oneClass.dicClassData["classId"]!] ) { (result) -> Void in
                 
                 self.arrNoticeData = result["list"] as! [Dictionary<String, String>]
                 self.table.reloadData()

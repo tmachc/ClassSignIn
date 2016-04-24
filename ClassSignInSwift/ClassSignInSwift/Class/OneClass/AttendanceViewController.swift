@@ -21,6 +21,7 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
 
         // Do any additional setup after loading the view.
         
+        
         // 获取考勤数据
         
         
@@ -60,16 +61,17 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "attendanceList" {
+            let destinationController = segue.destinationViewController as! AttStuListViewController
+            destinationController.dicAttendance = sender as! Dictionary<String, String>
+        }
     }
-    */
 
     // MARK: - table
     
@@ -87,4 +89,10 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (String)(userDefault.objectForKey("type")) == "teacher" {
+            let dicAttendance = arrAttendanceData[indexPath.row]
+            self.performSegueWithIdentifier("attendanceList", sender: dicAttendance)
+        }
+    }
 }

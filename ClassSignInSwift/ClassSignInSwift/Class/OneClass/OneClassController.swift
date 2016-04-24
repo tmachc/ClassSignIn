@@ -21,10 +21,9 @@ class OneClassController: UITabBarController {
             self.navigationItem.rightBarButtonItem = itemRight
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tabBar(self.tabBar, didSelectItem: self.tabBar.items![tabbarIndex])
     }
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
@@ -42,22 +41,11 @@ class OneClassController: UITabBarController {
             for viewC in self.childViewControllers {
                 if viewC.isKindOfClass(NoticeViewController) {
                     let vc = viewC as! NoticeViewController
-                    vc.strClassId = self.dicClassData["classId"]! as String
                     vc.getNoticeListData()
                 }
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func addClass(sender: UIButton) {
         if tabbarIndex == 0 {
@@ -68,18 +56,13 @@ class OneClassController: UITabBarController {
         }
         else if tabbarIndex == 1 {
             // 创建通知
-            HttpManager.defaultManager.getRequest(
-                url: HttpUrl,
-                params: ["command": "editNotice", "noticeName": "开课", "noticeContent": "准备开课啦", "noticeDate": "9月10日", "classId": dicClassData["classId"]!],
-                complete:
-                { (result) -> Void in
-                    if result["code"]!.isEqual(0) {
-                        
-                    }
-            })
+            
+            let vc = self.childViewControllers[1] as! NoticeViewController
+            vc.performSegueWithIdentifier("editNotice", sender: nil)
         }
         else {
             // 添加考勤记录
+            
         }
     }
 

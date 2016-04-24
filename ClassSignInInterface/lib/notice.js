@@ -14,7 +14,6 @@ exports.editNotice = function(req, callback) {
     var noticeId = req.query.noticeId;
     var noticeName = req.query.noticeName;
     var noticeContent = req.query.noticeContent;
-    var noticeDate = req.query.noticeDate;
     var classId = req.query.classId;
 
     if (noticeId == null || noticeId == undefined || noticeId == "") {
@@ -36,7 +35,6 @@ exports.editNotice = function(req, callback) {
                     "classId" : new ObjectID(classId),
                     "noticeName" : noticeName,
                     "noticeContent" : noticeContent,
-                    noticeDate: noticeDate,
                     createTime: new Date(),
                     updateTime: new Date()
                 };
@@ -70,7 +68,6 @@ exports.editNotice = function(req, callback) {
                 var json = {
                     noticeName : className,
                     noticeContent : noticeContent,
-                    noticeDate : noticeDate,
                     updateTime : new Date()
                 };
                 noticeProvider.update({"noticeId": new ObjectID(noticeId)}, {"$set": json}, function(err) {
@@ -98,9 +95,17 @@ exports.getNoticeList = function(req, callback) {
         }
         else {
             // result 为数组 没有结果的时候 是空数组[]
-            /*
-
-             */
+            var list = [];
+            for (var i = 0; i < result.length; i ++) {
+                var json = {
+                    noticeId : result[i]._id,
+                    noticeName : result[i].noticeName,
+                    noticeContent : result[i].noticeContent,
+                    //createTime : format(result[i].createTime, "yyyy-MM-dd hh:mm:ss"),
+                    //updateTime : format(result[i].updateTime, "yyyy-MM-dd hh:mm:ss")
+                };
+                list.push(json)
+            }
             callback({code: 0, list: result});
         }
     });

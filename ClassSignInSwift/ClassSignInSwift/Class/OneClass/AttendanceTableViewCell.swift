@@ -28,6 +28,12 @@ class AttendanceTableViewCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
+        if (String)(userDefault.objectForKey("type")) == "teacher" {
+            self.labAttendanceState.alpha = 0
+        }
+        else {
+            self.labAttendanceState.alpha = 1
+        }
         
         self.labAttendanceName.text = self.dicAttendanceData["attendanceName"]
         self.labAttendanceDate.text = self.dicAttendanceData["attendanceDate"]
