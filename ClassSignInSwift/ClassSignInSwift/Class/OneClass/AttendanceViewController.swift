@@ -90,7 +90,7 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if (String)(userDefault.objectForKey("type")) == "teacher" {
+        if userDefault.objectForKey("type")!.isEqual("teacher") {
             let dicAttendance = arrAttendanceData[indexPath.row]
             self.performSegueWithIdentifier("attendanceList", sender: dicAttendance)
         }

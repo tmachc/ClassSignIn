@@ -27,8 +27,7 @@ class AttendanceTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        if (String)(userDefault.objectForKey("type")) == "teacher" {
+        if userDefault.objectForKey("type")!.isEqual("teacher") {
             self.labAttendanceState.alpha = 0
         }
         else {

@@ -33,7 +33,7 @@ class HomeController: UITabBarController {
         if (userDefault.objectForKey("num") != nil) {
             // 登录了
             let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
-            if (String)(userDefault.objectForKey("type")) == "teacher" {
+            if userDefault.objectForKey("type")!.isEqual("teacher") {
                 // 老师端
             }
             else {

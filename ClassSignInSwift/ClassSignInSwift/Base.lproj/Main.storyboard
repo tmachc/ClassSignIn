@@ -317,11 +317,49 @@
                     <tabBarItem key="tabBarItem" tag="2" title="考勤" image="attendance" id="YII-Rb-v3x"/>
                     <connections>
                         <outlet property="table" destination="fQs-IW-O8D" id="f8q-K7-mWE"/>
+                        <segue destination="WAi-IK-5ri" kind="show" id="sHR-a2-03a"/>
+                        <segue destination="ZtY-R8-vhy" kind="show" id="xaL-Kq-g76"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5lS-Hq-9ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2828" y="457"/>
+            <point key="canvasLocation" x="2708" y="1358"/>
+        </scene>
+        <!--添加考勤-->
+        <scene sceneID="24H-AU-3ag">
+            <objects>
+                <viewController id="ZtY-R8-vhy" userLabel="添加考勤" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Shv-yc-Qr9"/>
+                        <viewControllerLayoutGuide type="bottom" id="62X-HX-e56"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Jh-ca-UZz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMW-0N-bYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3468" y="1661"/>
+        </scene>
+        <!--一次考勤的学生列表-->
+        <scene sceneID="nD4-3h-87Y">
+            <objects>
+                <viewController id="WAi-IK-5ri" userLabel="一次考勤的学生列表" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YLr-9b-c8v"/>
+                        <viewControllerLayoutGuide type="bottom" id="z39-vN-Upu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D7r-Y5-xuP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUG-qd-N3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3478" y="970"/>
         </scene>
         <!--通知-->
         <scene sceneID="O4W-C3-0xs">
@@ -805,8 +843,8 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="cMQ-vw-JwR"/>
                                         <exclude reference="Dsd-Fv-sOn"/>
+                                        <exclude reference="cMQ-vw-JwR"/>
                                     </mask>
                                 </variation>
                             </label>
