@@ -21,7 +21,9 @@ class HomeController: UITabBarController {
     
     override func viewWillAppear(animated: Bool) {
         self.selectedIndex = 0
-        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.addClass))
+        
+        let classViewController : ClassViewController = self.childViewControllers.first as! ClassViewController
+        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: classViewController, action: #selector(classViewController.addClass))
         self.navigationItem.rightBarButtonItem = itemRight
     }
     
@@ -33,12 +35,6 @@ class HomeController: UITabBarController {
         if (userDefault.objectForKey("num") != nil) {
             // 登录了
             let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
-            if userDefault.objectForKey("type")!.isEqual("teacher") {
-                // 老师端
-            }
-            else {
-                // 学生端
-            }
             classViewController.getClassData()
         }
         else {
@@ -49,19 +45,15 @@ class HomeController: UITabBarController {
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         self.title = item.title
-        print(item)
         if item.tag == 0 {
             // 课堂
-            let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.addClass))
+            let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
+            let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: classViewController, action: #selector(classViewController.addClass))
             self.navigationItem.rightBarButtonItem = itemRight
         }
         else {
             self.navigationItem.rightBarButtonItem = nil;
         }
-    }
-
-    func addClass(sender: UIButton) {
-        self.performSegueWithIdentifier("addNewClass", sender: nil)
     }
     
 }

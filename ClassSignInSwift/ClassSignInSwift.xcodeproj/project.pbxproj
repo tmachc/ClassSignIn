@@ -212,6 +212,7 @@
 				TargetAttributes = {
 					E7FADA1C1C06E41200991C06 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 973TH9R7F8;
 					};
 				};
 			};
@@ -429,6 +430,7 @@
 			baseConfigurationReference = 7C6CE344444D75B7173F7E87 /* Pods-ClassSignInSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ClassSignInSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -443,6 +445,7 @@
 			baseConfigurationReference = 5EC93D23969DA821306D4E3E /* Pods-ClassSignInSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ClassSignInSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

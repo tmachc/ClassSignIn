@@ -18,25 +18,33 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var btnDate: UIButton!
     
+    var dicHomeworkData = Dictionary<String, String>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(self.clickToAdd))
+        let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(self.clickToAddHomework))
         self.navigationItem.rightBarButtonItem = itemRight
         
         if homeworkId == "" {
-            self.tvHomeworkContent.text = ""
             self.title = "添加作业"
+            self.tvHomeworkContent.text = ""
+            datePicker.setDate(NSDate.init(timeIntervalSinceNow: 3600), animated: false)
         }
         else {
             self.title = "编辑作业"
+            self.tfHomeworkName.text = dicHomeworkData["homeworkName"]
+            self.tfHomeworkDate.text = dicHomeworkData["homeworkDate"]
+            self.tvHomeworkContent.text = dicHomeworkData["homeworkContent"]
+            let dateFormat = NSDateFormatter.init()
+            dateFormat.dateFormat = "yy年M月d日 HH:mm"
+        datePicker.setDate(dateFormat.dateFromString(dicHomeworkData["homeworkDate"]!)!, animated: false)
         }
         datePicker.alpha = 0
         btnDate.alpha = 0
-        datePicker.setDate(NSDate.init(timeIntervalSinceNow: 3600), animated: false)
     }
     
-    func clickToAdd() {
+    func clickToAddHomework() {
         if tfHomeworkName.text == "" {
             return;
         }
@@ -46,14 +54,19 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
         if tvHomeworkContent.text == "" {
             return;
         }
+        var dic = [
+            "command": "editHomework",
+            "homeworkName": self.tfHomeworkName.text!,
+            "homeworkDate": self.tfHomeworkDate.text!,
+            "homeworkContent": self.tvHomeworkContent.text!,
+            "classId": classId]
+        if homeworkId != "" {
+            dic["homeworkId"] = homeworkId
+        }
+        
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: [
-                "command": "editHomework",
-                "homeworkName": self.tfHomeworkName.text!,
-                "homeworkDate": self.tfHomeworkDate.text!,
-                "homeworkContent": self.tvHomeworkContent.text!,
-                "classId": classId],
+            params: dic,
             complete:
             { (result) -> Void in
                 if result["code"]!.isEqual(0) {

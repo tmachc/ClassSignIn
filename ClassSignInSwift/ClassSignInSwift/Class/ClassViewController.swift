@@ -11,6 +11,7 @@ import UIKit
 class ClassViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet var table: UITableView!
+    
     var refreshControl: UIRefreshControl!
     
     var arrClassData = [Dictionary<String, String>]()
@@ -19,27 +20,9 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //
-        arrClassData = [
-            [
-                "className": "高数",
-                "teacherId": "韩老师",
-                "classNum": "123456"
-            ],
-            [
-                "className": "线代",
-                "teacherId": "付老师",
-                "classNum": "456789"
-            ]
-        ]
         self.refreshControl = UIRefreshControl.init()
         self.refreshControl.addTarget(self, action: #selector(getClassData), forControlEvents: UIControlEvents.ValueChanged)
         self.table.addSubview(self.refreshControl);
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // ********* MARK: - Navigation
@@ -70,6 +53,10 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
             self.table.reloadData()
             self.refreshControl.endRefreshing()
         }
+    }
+    
+    func addClass(sender: UIButton) {
+        self.performSegueWithIdentifier("addNewClass", sender: nil)
     }
     
     // ********* MARK: - table

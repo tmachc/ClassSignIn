@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.navigationBarHidden = true
         
-        tfUserName.text = "2010011182"
-        tfPassword.text = "123"
+//        tfUserName.text = "2010011182"
+//        tfPassword.text = "123"
         
         // Do any additional setup after loading the view.
         
@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     @IBAction func clickLogin(sender: UIButton) {
         // 先判断输入的是否为空
         if tfUserName.text == "" {
+            
             return;
         }
         if tfPassword.text == "" {
@@ -39,7 +40,11 @@ class LoginViewController: UIViewController {
         // ******* 网络请求
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: ["command": "login", "num": tfUserName.text!, "password": tfPassword.text!])
+            params: [
+                "command": "login",
+                "num": tfUserName.text!,
+                "password": tfPassword.text!
+            ])
             { (result) -> Void in
                 
                 if result["code"]!.isEqual(0) {
@@ -54,21 +59,4 @@ class LoginViewController: UIViewController {
                 }
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-    }
-
 }

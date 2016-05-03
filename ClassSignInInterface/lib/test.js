@@ -26,7 +26,7 @@ exports.initData = function(req,callback){
         "name" : "韩冲",
         "num" : "2010011182",
         "sex" : "男",
-        "age" : 24,
+        "age" : "24",
         "type" : "teacher"
     };
     //userProvider.insert(teacher,{},function(err){
@@ -45,7 +45,7 @@ exports.initData = function(req,callback){
         "name" : "付琦",
         "num" : "2012010945",
         "sex" : "女",
-        "age" : 21,
+        "age" : "21",
         "type" : "student"
     };
     //userProvider.insert(student,{},function(err){

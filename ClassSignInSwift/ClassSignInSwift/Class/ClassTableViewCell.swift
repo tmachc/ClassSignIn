@@ -19,11 +19,6 @@ class ClassTableViewCell: UITableViewCell {
     
     /** 课程数据 */
     var dicClassData = Dictionary<String, String>()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     // 加载数据
     override func setSelected(selected: Bool, animated: Bool) {

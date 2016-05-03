@@ -19,35 +19,8 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // 获取通知数据
         self.getHomeworkListData()
-        
-//        arrHomeworkData = [
-//            [
-//                "homeworkName": "放假",
-//                "homeworkDate": "1月10日 22:22",
-//                "homeworkContent": "没作业！！！！"
-//            ],
-//            [
-//                "homeworkName": "开学",
-//                "homeworkDate": "2月10日 22:22",
-//                "homeworkContent": "没作业！！！！没作业！！！！"
-//            ],
-//            [
-//                "homeworkName": "考试",
-//                "homeworkDate": "3月10日 22:22",
-//                "homeworkContent": "没作业！！！！没作业！！！！没作业！！！！"
-//            ]
-//        ]
-//        
-//        // 刷新列表
-//        self.table.reloadData()
-        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -58,6 +31,11 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
             let destinationController = segue.destinationViewController as! EditHomeworkViewController
             let oneClass = self.parentViewController as! OneClassController
             destinationController.classId = oneClass.dicClassData["classId"]!
+            if sender != nil {
+                let dic = self.arrHomeworkData[sender!.row]
+                destinationController.homeworkId = dic["homeworkId"]!
+                destinationController.dicHomeworkData = dic as Dictionary<String, String>
+            }
         }
     }
     
@@ -67,7 +45,11 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
         let oneClassVC = self.parentViewController as! OneClassController
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: ["command": "getHomeworkList", "userId": userDefault.objectForKey("_id")!, "classId": oneClassVC.dicClassData["classId"]!])
+            params: [
+                "command": "getHomeworkList",
+                "userId": userDefault.objectForKey("_id")!,
+                "classId": oneClassVC.dicClassData["classId"]!
+            ])
             { (result) -> Void in
                 self.arrHomeworkData = result["list"] as! [Dictionary<String, String>]
                 self.table.reloadData()
@@ -86,6 +68,12 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell: HomeworkTableViewCell = tableView.dequeueReusableCellWithIdentifier("homeworkCellID") as! HomeworkTableViewCell
         cell.dicHomeworkData = arrHomeworkData[indexPath.row]
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if userDefault.objectForKey("type")!.isEqual("teacher"){
+            self.performSegueWithIdentifier("editHomework", sender: indexPath)
+        }
     }
 
 }

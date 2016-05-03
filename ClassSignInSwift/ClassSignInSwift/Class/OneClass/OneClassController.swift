@@ -38,12 +38,8 @@ class OneClassController: UITabBarController {
         }
         else {
             // 通知
-            for viewC in self.childViewControllers {
-                if viewC.isKindOfClass(NoticeViewController) {
-                    let vc = viewC as! NoticeViewController
-                    vc.getNoticeListData()
-                }
-            }
+            let vc = self.childViewControllers[1] as! NoticeViewController
+            vc.getNoticeListData()
         }
     }
     
@@ -62,7 +58,9 @@ class OneClassController: UITabBarController {
         }
         else {
             // 添加考勤记录
-            
+            //addAttendence
+            let vc = self.childViewControllers.last as! AttendanceViewController
+            vc.performSegueWithIdentifier("addAttendence", sender: nil)
         }
     }
 

@@ -19,27 +19,6 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
 
         // Do any additional setup after loading the view.
         
-        // 获取通知数据
-//        arrNoticeData = [
-//            [
-//                "noticeName": "放假",
-//                "noticeDate": "1月10日 22:22",
-//                "noticeContent": "不用回来了！！！！不用回来了！！！！不用回来了！！！！"
-//            ],
-//            [
-//                "noticeName": "开学",
-//                "noticeDate": "2月10日 22:22",
-//                "noticeContent": "没作业！！！！没作业！！！！没作业！！！！"
-//            ],
-//            [
-//                "noticeName": "考试",
-//                "noticeDate": "3月10日 22:22",
-//                "noticeContent": "开卷！！！！开卷！！！！开卷！！！！"
-//            ]
-//        ]
-        
-        // 刷新列表
-        self.table.reloadData()
     }
 
     // MARK: - Navigation
@@ -75,7 +54,7 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
         return arrNoticeData.count
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
+        return 100
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: NoticeTableViewCell = tableView.dequeueReusableCellWithIdentifier("noticeCellID") as! NoticeTableViewCell

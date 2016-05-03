@@ -13,6 +13,7 @@ class AddNewClassViewController: UIViewController {
     @IBOutlet var tfClassNum: UITextField!
     
     @IBOutlet var labIntro: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

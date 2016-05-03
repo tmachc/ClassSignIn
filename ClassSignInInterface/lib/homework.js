@@ -56,7 +56,7 @@ exports.editHomework = function(req, callback) {
     }
     else {
         // 更新课程信息
-        homeworkProvider.findOne({"homeworkId": new ObjectID(homeworkId)}, {}, function(err, result) {
+        homeworkProvider.findOne({"_id": new ObjectID(homeworkId)}, {}, function(err, result) {
             if (err) {
                 // 数据库错误
                 logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
@@ -69,12 +69,12 @@ exports.editHomework = function(req, callback) {
             }
             else {
                 var json = {
-                    homeworkName : className,
+                    homeworkName : homeworkName,
                     homeworkContent : homeworkContent,
                     homeworkDate : homeworkDate,
                     updateTime : new Date()
                 };
-                homeworkProvider.update({"homeworkId": new ObjectID(homeworkId)}, {"$set": json}, function(err) {
+                homeworkProvider.update({"_id": new ObjectID(homeworkId)}, {"$set": json}, function(err) {
                     if (err) {
                         // 数据库错误
                         logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
