@@ -10,6 +10,8 @@
 		2D48A8831CCBABFD0018EEDE /* EditNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48A8821CCBABFD0018EEDE /* EditNoticeViewController.swift */; };
 		2D48A8851CCBB4B70018EEDE /* AttStuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48A8841CCBB4B70018EEDE /* AttStuListViewController.swift */; };
 		2D541CC41CC52FEE008D9322 /* AddNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */; };
+		2D66BC481CD9D643006817E2 /* AddNewAttViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66BC471CD9D643006817E2 /* AddNewAttViewController.swift */; };
+		2D66BC4A1CD9E6D8006817E2 /* AttStuListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66BC491CD9E6D8006817E2 /* AttStuListTableViewCell.swift */; };
 		2DAADE001CC90D190020F200 /* EditHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAADDFF1CC90D190020F200 /* EditHomeworkViewController.swift */; };
 		2DC89BF91C422D4B00A0D4AA /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */; };
 		2DC89BFB1C423AEF00A0D4AA /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */; };
@@ -48,6 +50,8 @@
 		2D48A8821CCBABFD0018EEDE /* EditNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNoticeViewController.swift; sourceTree = "<group>"; };
 		2D48A8841CCBB4B70018EEDE /* AttStuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttStuListViewController.swift; sourceTree = "<group>"; };
 		2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClassViewController.swift; sourceTree = "<group>"; };
+		2D66BC471CD9D643006817E2 /* AddNewAttViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewAttViewController.swift; sourceTree = "<group>"; };
+		2D66BC491CD9E6D8006817E2 /* AttStuListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttStuListTableViewCell.swift; sourceTree = "<group>"; };
 		2DAADDFF1CC90D190020F200 /* EditHomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHomeworkViewController.swift; sourceTree = "<group>"; };
 		2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		2DC89BFA1C423AEF00A0D4AA /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				E7276E6B1C3BC18300E4B2A7 /* AttendanceViewController.swift */,
 				2DC89BF81C422D4B00A0D4AA /* AttendanceTableViewCell.swift */,
 				2D48A8841CCBB4B70018EEDE /* AttStuListViewController.swift */,
+				2D66BC491CD9E6D8006817E2 /* AttStuListTableViewCell.swift */,
+				2D66BC471CD9D643006817E2 /* AddNewAttViewController.swift */,
 			);
 			path = OneClass;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D66BC4A1CD9E6D8006817E2 /* AttStuListTableViewCell.swift in Sources */,
 				E7FADA671C08568200991C06 /* LoginViewController.swift in Sources */,
 				2D48A8851CCBB4B70018EEDE /* AttStuListViewController.swift in Sources */,
 				E7276E6E1C3BC18300E4B2A7 /* OneClassController.swift in Sources */,
@@ -319,6 +326,7 @@
 				E7E8FA3A1C97EC5F004C95B9 /* HomeworkTableViewCell.swift in Sources */,
 				2DC89BF91C422D4B00A0D4AA /* AttendanceTableViewCell.swift in Sources */,
 				E7FADA501C06EC9000991C06 /* HomeController.swift in Sources */,
+				2D66BC481CD9D643006817E2 /* AddNewAttViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

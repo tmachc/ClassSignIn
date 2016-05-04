@@ -35,6 +35,9 @@ class OneClassController: UITabBarController {
         }
         else if item.tag == 2 {
             // 考勤
+            let vc = self.childViewControllers.last as! AttendanceViewController
+            vc.classId = self.dicClassData["classId"]!
+            vc.getAttendanceList()
         }
         else {
             // 通知
@@ -43,7 +46,7 @@ class OneClassController: UITabBarController {
         }
     }
     
-    @IBAction func addClass(sender: UIButton) {
+    func addClass(sender: UIButton) {
         if tabbarIndex == 0 {
             // 创建作业
             

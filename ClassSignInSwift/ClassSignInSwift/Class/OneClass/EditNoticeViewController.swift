@@ -8,12 +8,14 @@
 
 import UIKit
 
-class EditNoticeViewController: UIViewController {
+class EditNoticeViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var classId = ""
     var noticeId = ""
     @IBOutlet var tfNoticeName: UITextField!
     @IBOutlet var tvNoticeContent: UITextView!
+    
+    var dicNoticeData = Dictionary<String, String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +24,13 @@ class EditNoticeViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = itemRight
         
         if noticeId == "" {
-            self.tvNoticeContent.text = ""
             self.title = "添加通知"
+            self.tvNoticeContent.text = ""
         }
         else {
             self.title = "编辑通知"
+            self.tfNoticeName.text = dicNoticeData["noticeName"]
+            self.tvNoticeContent.text = dicNoticeData["noticeContent"]
         }
     }
     
@@ -37,13 +41,18 @@ class EditNoticeViewController: UIViewController {
         if tvNoticeContent.text == "" {
             return;
         }
+        var dic = [
+            "command": "editNotice",
+            "noticeName": self.tfNoticeName.text!,
+            "noticeContent": self.tvNoticeContent.text!,
+            "classId": classId]
+        if noticeId != "" {
+            dic["noticeId"] = noticeId
+        }
+        
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: [
-                "command": "editNotice",
-                "noticeName": self.tfNoticeName.text!,
-                "noticeContent": self.tvNoticeContent.text!,
-                "classId": classId],
+            params: dic,
             complete:
             { (result) -> Void in
                 if result["code"]!.isEqual(0) {
@@ -52,4 +61,5 @@ class EditNoticeViewController: UIViewController {
         })
         
     }
+    
 }

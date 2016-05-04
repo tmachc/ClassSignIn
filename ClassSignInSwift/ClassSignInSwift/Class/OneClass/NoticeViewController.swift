@@ -12,12 +12,18 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet var table: UITableView!
     
+    var refreshControl: UIRefreshControl!
+    
     var arrNoticeData = [Dictionary<String, String>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.refreshControl = UIRefreshControl.init()
+        self.refreshControl.addTarget(self, action: #selector(getNoticeListData), forControlEvents: UIControlEvents.ValueChanged)
+        self.table.addSubview(self.refreshControl);
 
-        // Do any additional setup after loading the view.
+        // 获取通知数据
+        self.getNoticeListData()
         
     }
 
@@ -31,6 +37,11 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
             let destinationController = segue.destinationViewController as! EditNoticeViewController
             let oneClass = self.parentViewController as! OneClassController
             destinationController.classId = oneClass.dicClassData["classId"]!
+            if sender != nil {
+                let dic = self.arrNoticeData[sender!.row]
+                destinationController.noticeId = dic["noticeId"]!
+                destinationController.dicNoticeData = dic as Dictionary<String, String>
+            }
         }
     }
     
@@ -41,10 +52,14 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
         let oneClass = self.parentViewController as! OneClassController
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: ["command": "getNoticeList", "classId": oneClass.dicClassData["classId"]!] ) { (result) -> Void in
-                
-                self.arrNoticeData = result["list"] as! [Dictionary<String, String>]
-                self.table.reloadData()
+            params: [
+                "command": "getNoticeList",
+                "classId": oneClass.dicClassData["classId"]!
+            ])
+        { (result) -> Void in
+            self.arrNoticeData = result["list"] as! [Dictionary<String, String>]
+            self.table.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
 
@@ -60,5 +75,10 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
         let cell: NoticeTableViewCell = tableView.dequeueReusableCellWithIdentifier("noticeCellID") as! NoticeTableViewCell
         cell.dicNoticeData = arrNoticeData[indexPath.row]
         return cell
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if userDefault.objectForKey("type")!.isEqual("teacher"){
+            self.performSegueWithIdentifier("editNotice", sender: indexPath)
+        }
     }
 }

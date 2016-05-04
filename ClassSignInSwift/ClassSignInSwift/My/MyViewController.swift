@@ -55,7 +55,11 @@ class MyViewController: UIViewController, UITableViewDataSource, UITableViewDele
         else if indexPath.row == 3 {
             cell.textLabel?.text = "年龄: " + (userDefault.objectForKey("age") as! String)
         }
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
 }

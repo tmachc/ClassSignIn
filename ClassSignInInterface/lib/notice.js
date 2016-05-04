@@ -53,7 +53,7 @@ exports.editNotice = function(req, callback) {
     }
     else {
         // 更新课程信息
-        noticeProvider.findOne({"noticeId": new ObjectID(noticeId)}, {}, function(err, result) {
+        noticeProvider.findOne({"_id": new ObjectID(noticeId)}, {}, function(err, result) {
             if (err) {
                 // 数据库错误
                 logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
@@ -70,7 +70,7 @@ exports.editNotice = function(req, callback) {
                     noticeContent : noticeContent,
                     updateTime : new Date()
                 };
-                noticeProvider.update({"noticeId": new ObjectID(noticeId)}, {"$set": json}, function(err) {
+                noticeProvider.update({"_id": new ObjectID(noticeId)}, {"$set": json}, function(err) {
                     if (err) {
                         // 数据库错误
                         logger.warn(global.warnCode.adminDbError,":",req.url,req.body);
@@ -106,7 +106,7 @@ exports.getNoticeList = function(req, callback) {
                 };
                 list.push(json)
             }
-            callback({code: 0, list: result});
+            callback({code: 0, list: list});
         }
     });
 };

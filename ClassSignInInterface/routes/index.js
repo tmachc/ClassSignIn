@@ -136,11 +136,33 @@ editAttendance = function(req, callback) {
 };
 
 // 老师 考勤列表
+getAttendanceList = function(req, callback) {
+  attendance.getAttendanceList(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // 老师 一次考勤详情
+getOneAttendanceData = function(req, callback) {
+  attendance.getOneAttendanceData(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
+
+// 老师 结束考勤
+endSignIn = function(req, callback) {
+  attendance.endSignIn(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // 学生 考勤列表
 
 // 学生 签到
+stuSignIn = function(req, callback) {
+  attendance.stuSignIn(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // 老师 查看考勤(客户端点名)

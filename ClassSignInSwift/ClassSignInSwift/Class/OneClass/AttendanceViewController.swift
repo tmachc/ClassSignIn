@@ -12,8 +12,10 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet var table: UITableView!
     
-    var arrAttendanceData = [Dictionary<String, String>]()
+    var refreshControl: UIRefreshControl!
     
+    var arrAttendanceData = [Dictionary<String, AnyObject>]()
+    var classId = ""
     
 
     override func viewDidLoad() {
@@ -21,6 +23,9 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
 
         // Do any additional setup after loading the view.
         
+        self.refreshControl = UIRefreshControl.init()
+        self.refreshControl.addTarget(self, action: #selector(getAttendanceList), forControlEvents: UIControlEvents.ValueChanged)
+        self.table.addSubview(self.refreshControl);
         
         // 获取考勤数据
         
@@ -31,34 +36,11 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
         3、请假
         4、出勤
         */
-        arrAttendanceData = [
-            [
-                "attendanceName": "考勤1",
-                "attendanceDate": "1月10日",
-                "attendanceState": "1"
-            ],
-            [
-                "attendanceName": "考勤2",
-                "attendanceDate": "1月11日",
-                "attendanceState": "2"
-            ],
-            [
-                "attendanceName": "考勤3",
-                "attendanceDate": "1月12日",
-                "attendanceState": "4"
-            ]
-        ]
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.getAttendanceList), name: "reloadList", object: nil)
         
         // 刷新列表
         self.table.reloadData()
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Navigation
@@ -69,7 +51,30 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
         // Pass the selected object to the new view controller.
         if segue.identifier == "attendanceList" {
             let destinationController = segue.destinationViewController as! AttStuListViewController
-            destinationController.dicAttendance = sender as! Dictionary<String, String>
+            destinationController.dicAttendance = sender as! Dictionary<String, AnyObject>
+        }
+        if segue.identifier == "addAttendence" {
+            let destinationController = segue.destinationViewController as! AddNewAttViewController
+            destinationController.classId = self.classId
+        }
+    }
+    
+    // MARK: - function
+    
+    func getAttendanceList() {
+        HttpManager.defaultManager.getRequest(
+            url: HttpUrl,
+            params: [
+                "command": "getAttendanceList",
+                "classId": self.classId,
+                "userId": userDefault.objectForKey("_id")!,
+                "type": userDefault.objectForKey("type")!
+            ])
+        { (result) -> Void in
+            print(result["list"])
+            self.arrAttendanceData = result["list"] as! [Dictionary<String, AnyObject>]
+            self.table.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
 
@@ -90,9 +95,13 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if userDefault.objectForKey("type")!.isEqual("teacher") {
+        if userDefault.objectForKey("type")!.isEqual("teacher")  {
             let dicAttendance = arrAttendanceData[indexPath.row]
             self.performSegueWithIdentifier("attendanceList", sender: dicAttendance)
         }
+    }
+    
+    override func removeFromParentViewController() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "reloadList", object: nil)
     }
 }

@@ -42,8 +42,8 @@ exports.initData = function(req,callback){
         "_id" : new ObjectID(),
         "phone" : "18210277823",
         "password" : "123",
-        "name" : "付琦",
-        "num" : "2012010945",
+        "name" : "高晨阳",
+        "num" : "2012010946",
         "sex" : "女",
         "age" : "21",
         "type" : "student"

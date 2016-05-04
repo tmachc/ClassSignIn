@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.navigationBarHidden = true
         
-//        tfUserName.text = "2010011182"
-//        tfPassword.text = "123"
+        tfUserName.text = "2010011182"
+        tfPassword.text = "123"
         
         // Do any additional setup after loading the view.
         

@@ -12,12 +12,18 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet var table: UITableView!
     
+    var refreshControl: UIRefreshControl!
+    
     var arrHomeworkData = [Dictionary<String, String>]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 获取通知数据
+        self.refreshControl = UIRefreshControl.init()
+        self.refreshControl.addTarget(self, action: #selector(getHomeworkListData), forControlEvents: UIControlEvents.ValueChanged)
+        self.table.addSubview(self.refreshControl);
+        
+        // 获取作业数据
         self.getHomeworkListData()
     }
 
@@ -53,6 +59,7 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
             { (result) -> Void in
                 self.arrHomeworkData = result["list"] as! [Dictionary<String, String>]
                 self.table.reloadData()
+                self.refreshControl.endRefreshing()
         }
     }
     

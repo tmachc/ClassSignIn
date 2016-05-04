@@ -38,8 +38,9 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
             self.tvHomeworkContent.text = dicHomeworkData["homeworkContent"]
             let dateFormat = NSDateFormatter.init()
             dateFormat.dateFormat = "yy年M月d日 HH:mm"
-        datePicker.setDate(dateFormat.dateFromString(dicHomeworkData["homeworkDate"]!)!, animated: false)
+            datePicker.setDate(dateFormat.dateFromString(dicHomeworkData["homeworkDate"]!)!, animated: false)
         }
+        
         datePicker.alpha = 0
         btnDate.alpha = 0
     }
