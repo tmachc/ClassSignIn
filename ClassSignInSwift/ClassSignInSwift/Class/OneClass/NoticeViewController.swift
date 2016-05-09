@@ -20,7 +20,7 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         self.refreshControl = UIRefreshControl.init()
         self.refreshControl.addTarget(self, action: #selector(getNoticeListData), forControlEvents: UIControlEvents.ValueChanged)
-        self.table.addSubview(self.refreshControl);
+        self.table.addSubview(self.refreshControl)
 
         // 获取通知数据
         self.getNoticeListData()

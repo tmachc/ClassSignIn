@@ -22,7 +22,7 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.refreshControl = UIRefreshControl.init()
         self.refreshControl.addTarget(self, action: #selector(getClassData), forControlEvents: UIControlEvents.ValueChanged)
-        self.table.addSubview(self.refreshControl);
+        self.table.addSubview(self.refreshControl)
     }
 
     // ********* MARK: - Navigation

@@ -29,7 +29,7 @@ class AddNewAttViewController: UIViewController {
     
     func clickToAdd() {
         if tfAttendanceName.text == "" {
-            return;
+            return
         }
         
         HttpManager.defaultManager.getRequest(

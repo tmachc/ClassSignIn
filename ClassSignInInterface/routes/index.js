@@ -66,10 +66,11 @@ login = function(req, callback) {
 };
 
 // 注册
-
-// 找回密码
-
-// 修改密码
+register = function(req, callback) {
+  user.register(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
 
 // ************************ 课程部分
 // 添加,修改课程
@@ -135,7 +136,7 @@ editAttendance = function(req, callback) {
   });
 };
 
-// 老师 考勤列表
+// 考勤列表
 getAttendanceList = function(req, callback) {
   attendance.getAttendanceList(req, function(sendRes) {
     callback(sendRes);
@@ -155,8 +156,6 @@ endSignIn = function(req, callback) {
     callback(sendRes);
   });
 };
-
-// 学生 考勤列表
 
 // 学生 签到
 stuSignIn = function(req, callback) {

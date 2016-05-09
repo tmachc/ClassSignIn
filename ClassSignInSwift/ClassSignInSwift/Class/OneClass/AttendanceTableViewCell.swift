@@ -35,12 +35,20 @@ class AttendanceTableViewCell: UITableViewCell {
             self.labAttendanceState.alpha = 0
             if self.dicAttendanceData["attendanceState"]!.isEqual("start") {
                 btnEndAttendance.alpha = 1
+                btnEndAttendance.setTitle("结束签到", forState: .Normal)
+                btnEndAttendance.backgroundColor = UIColor.redColor()
             }
         }
         else {
             self.labAttendanceState.alpha = 1
             let arr = dicAttendanceData["classMate"] as! Array<Dictionary<String, AnyObject>>
             state = arr[0]["attendanceState"] as! String
+            if self.dicAttendanceData["attendanceState"]!.isEqual("start") && state == "1" {
+                self.labAttendanceState.alpha = 0
+                btnEndAttendance.alpha = 1
+                btnEndAttendance.setTitle("签到", forState: .Normal)
+                btnEndAttendance.backgroundColor = UIColor.greenColor()
+            }
         }
         
         self.labAttendanceName.text = self.dicAttendanceData["attendanceName"] as? String
@@ -66,12 +74,18 @@ class AttendanceTableViewCell: UITableViewCell {
     }
 
     @IBAction func endAttendance(sender: UIButton) {
+        var dic = [
+            "command": "endSignIn",
+            "attendanceId": self.dicAttendanceData["attendanceId"]!
+        ]
+        if userDefault.objectForKey("type")!.isEqual("student") {
+            dic["command"] = "stuSignIn"
+            dic["studentId"] = userDefault.objectForKey("_id")
+            dic["state"] = "4"
+        }
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: [
-                "command": "endSignIn",
-                "attendanceId": self.dicAttendanceData["attendanceId"]!
-        ]) { (result) in
+            params: dic ) { (result) in
             if result["code"]!.isEqual(0) {
                 NSNotificationCenter.defaultCenter().postNotificationName("reloadList", object: nil)
             }

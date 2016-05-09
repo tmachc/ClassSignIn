@@ -18,23 +18,26 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBarHidden = true
-        
         tfUserName.text = "2010011182"
         tfPassword.text = "123"
         
-        // Do any additional setup after loading the view.
-        
+        // 定义所有子页面返回按钮的名称
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Done, target: nil, action: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
     }
     
     @IBAction func clickLogin(sender: UIButton) {
         // 先判断输入的是否为空
         if tfUserName.text == "" {
             
-            return;
+            return
         }
         if tfPassword.text == "" {
-            return;
+            return
         }
         
         // ******* 网络请求
@@ -58,5 +61,9 @@ class LoginViewController: UIViewController {
                     
                 }
         }
+    }
+    
+    @IBAction func clickToRegisterPage(sender: UIButton) {
+        self.performSegueWithIdentifier("register", sender: nil)
     }
 }

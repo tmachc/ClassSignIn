@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D18E0311CDE08DC00AF7A1B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18E0301CDE08DC00AF7A1B /* RegisterViewController.swift */; };
 		2D48A8831CCBABFD0018EEDE /* EditNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48A8821CCBABFD0018EEDE /* EditNoticeViewController.swift */; };
 		2D48A8851CCBB4B70018EEDE /* AttStuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48A8841CCBB4B70018EEDE /* AttStuListViewController.swift */; };
 		2D541CC41CC52FEE008D9322 /* AddNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D18E0301CDE08DC00AF7A1B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2D48A8821CCBABFD0018EEDE /* EditNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNoticeViewController.swift; sourceTree = "<group>"; };
 		2D48A8841CCBB4B70018EEDE /* AttStuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttStuListViewController.swift; sourceTree = "<group>"; };
 		2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewClassViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				E7FADA201C06E41200991C06 /* AppDelegate.swift */,
 				E7FADA241C06E41200991C06 /* Main.storyboard */,
 				E7FADA661C08568200991C06 /* LoginViewController.swift */,
+				2D18E0301CDE08DC00AF7A1B /* RegisterViewController.swift */,
 				E7FADA4F1C06EC9000991C06 /* HomeController.swift */,
 				2D541CC31CC52FEE008D9322 /* AddNewClassViewController.swift */,
 				E7276E5E1C3BA27D00E4B2A7 /* Class */,
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D66BC4A1CD9E6D8006817E2 /* AttStuListTableViewCell.swift in Sources */,
+				2D18E0311CDE08DC00AF7A1B /* RegisterViewController.swift in Sources */,
 				E7FADA671C08568200991C06 /* LoginViewController.swift in Sources */,
 				2D48A8851CCBB4B70018EEDE /* AttStuListViewController.swift in Sources */,
 				E7276E6E1C3BC18300E4B2A7 /* OneClassController.swift in Sources */,

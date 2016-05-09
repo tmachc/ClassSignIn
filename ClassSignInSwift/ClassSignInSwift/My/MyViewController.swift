@@ -24,8 +24,8 @@ class MyViewController: UIViewController, UITableViewDataSource, UITableViewDele
     
     @IBAction func logout(sender: UIButton) {
         
-        userDefault.removeObjectForKey("num");
-        userDefault.removeObjectForKey("_id");
+        userDefault.removeObjectForKey("num")
+        userDefault.removeObjectForKey("_id")
         // 去登录
         self.parentViewController!.performSegueWithIdentifier("login", sender: nil)
     }

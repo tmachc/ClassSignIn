@@ -8,7 +8,8 @@
 
 global.warnCode={
     adminDbError:{code:1000, message:"数据库错误"},
-    userNotExistError :{code:1001, message:"用户不存在"}
+    userNotExistError :{code:1001, message:"用户不存在"},
+    userHaveBeenExistError :{code:1001, message:"用户已存在"}
 
 };
 global.Url={

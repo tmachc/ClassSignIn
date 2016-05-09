@@ -47,13 +47,13 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
     
     func clickToAddHomework() {
         if tfHomeworkName.text == "" {
-            return;
+            return
         }
         if tfHomeworkDate.text == "" {
-            return;
+            return
         }
         if tvHomeworkContent.text == "" {
-            return;
+            return
         }
         var dic = [
             "command": "editHomework",
@@ -93,14 +93,14 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
         }
         else {
             self.datePicker.alpha = 0
-            btnDate.alpha = 0;
+            btnDate.alpha = 0
         }
         return true
     }
     
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         self.datePicker.alpha = 0
-        btnDate.alpha = 0;
+        btnDate.alpha = 0
         return true
     }
 }

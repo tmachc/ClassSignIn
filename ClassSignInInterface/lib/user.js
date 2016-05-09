@@ -43,3 +43,50 @@ exports.login = function(req, callback) {
         }
     });
 };
+
+exports.register = function(err, result){
+    var num = req.query.num;
+    var password = req.query.password;
+    var name= req.query.name;
+    userProvider.findOne({}, {}, function(err, result){
+        if (err) {
+            // 数据库错误
+            logger.warn(global.warnCode.adminDbError,":",req.url,req.query);
+            callback(global.warnCode.adminDbError);
+        }
+        else if (result != null) {
+            logger.warn(global.warnCode.userHaveBeenExistError,":",req.url,req.query);
+            callback(global.warnCode.userHaveBeenExistError);
+        }
+        else {
+            var user = {
+                "_id" : new ObjectID(),
+                "password" : password,
+                "name" : name,
+                "num" : num,
+                "sex" : "",
+                "age" : ""
+            };
+            if (num.length == 6) {
+                user.type = "teacher";
+            }
+            else if (num.length == 8) {
+                user.type = "student"
+            }
+            else {
+                callback({code: 1005, message:"学号或教职工号不正确"});
+                return;
+            }
+            userProvider.insert(user, {}, function(err){
+                if (err) {
+                    // 数据库错误
+                    logger.warn(global.warnCode.adminDbError,":",req.url,req.query);
+                    callback(global.warnCode.adminDbError);
+                }
+                else {
+                    callback({code: 0, user: user});
+                }
+            });
+        }
+    });
+};

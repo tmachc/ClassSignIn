@@ -25,7 +25,7 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
         
         self.refreshControl = UIRefreshControl.init()
         self.refreshControl.addTarget(self, action: #selector(getAttendanceList), forControlEvents: UIControlEvents.ValueChanged)
-        self.table.addSubview(self.refreshControl);
+        self.table.addSubview(self.refreshControl)
         
         // 获取考勤数据
         

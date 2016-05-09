@@ -52,7 +52,7 @@ class HomeController: UITabBarController {
             self.navigationItem.rightBarButtonItem = itemRight
         }
         else {
-            self.navigationItem.rightBarButtonItem = nil;
+            self.navigationItem.rightBarButtonItem = nil
         }
     }
     

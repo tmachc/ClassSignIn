@@ -21,7 +21,7 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
         
         self.refreshControl = UIRefreshControl.init()
         self.refreshControl.addTarget(self, action: #selector(getHomeworkListData), forControlEvents: UIControlEvents.ValueChanged)
-        self.table.addSubview(self.refreshControl);
+        self.table.addSubview(self.refreshControl)
         
         // 获取作业数据
         self.getHomeworkListData()

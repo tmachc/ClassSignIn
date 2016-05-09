@@ -36,10 +36,10 @@ class EditNoticeViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     func clickToAdd() {
         if tfNoticeName.text == "" {
-            return;
+            return
         }
         if tvNoticeContent.text == "" {
-            return;
+            return
         }
         var dic = [
             "command": "editNotice",

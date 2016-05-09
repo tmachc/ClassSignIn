@@ -36,7 +36,7 @@ class AddNewClassViewController: UIViewController {
     
     func clickToAdd() {
         if tfClassNum.text == "" {
-            return;
+            return
         }
         if userDefault.objectForKey("type")!.isEqual("teacher") {
             HttpManager.defaultManager.getRequest(
