@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 
 class HomeController: UITabBarController {
+    
+    var isFromEditMy = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,15 @@ class HomeController: UITabBarController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.selectedIndex = 0
+        if isFromEditMy {
+            self.selectedIndex = 1
+            isFromEditMy = false
+            let myViewController = self.viewControllers?.last as! MyViewController
+            myViewController.viewWillAppear(false)
+        }
+        else {
+            self.selectedIndex = 0
+        }
         
         let classViewController : ClassViewController = self.childViewControllers.first as! ClassViewController
         let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: classViewController, action: #selector(classViewController.addClass))

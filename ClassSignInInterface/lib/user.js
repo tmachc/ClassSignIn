@@ -46,7 +46,7 @@ exports.register = function(req, callback){
     var num = req.query.num;
     var password = req.query.password;
     var name= req.query.name;
-    userProvider.findOne({}, {}, function(err, result){
+    userProvider.findOne({num: num}, {}, function(err, result){
         if (err) {
             // 数据库错误
             logger.warn(global.warnCode.adminDbError,":",req.url,req.query);
@@ -117,7 +117,7 @@ exports.editMy = function(req, callback){
                 user.sex = sex;
             }
             if (age != null && age != "" && age != undefined) {
-                user.name = age;
+                user.age = age;
             }
             userProvider.update({_id: new ObjectID(userId)}, {"$set": user}, function(err){
                 if (err) {

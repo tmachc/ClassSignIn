@@ -62,7 +62,10 @@ class RegisterViewController: UIViewController {
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }
             else {
-                
+                let alert = UIAlertController.init(title: "提示", message: result["message"] as? String, preferredStyle: UIAlertControllerStyle.Alert)
+                let cancel = UIAlertAction.init(title: "确定", style: .Cancel, handler: nil)
+                alert.addAction(cancel)
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }

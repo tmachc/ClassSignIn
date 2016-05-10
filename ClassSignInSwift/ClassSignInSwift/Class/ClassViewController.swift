@@ -48,7 +48,6 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
                 "type": userDefault.objectForKey("type")!
             ])
         { (result) -> Void in
-            print(result["list"])
             self.arrClassData = result["list"] as! [Dictionary<String, String>]
             self.table.reloadData()
             self.refreshControl.endRefreshing()

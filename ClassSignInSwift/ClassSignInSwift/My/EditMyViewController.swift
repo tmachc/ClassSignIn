@@ -61,7 +61,8 @@ class EditMyViewController: UIViewController {
             url: HttpUrl,
             params: [
                 "command": "editMy",
-                key: textField.text!
+                key: textField.text!,
+                "userId": userDefault.objectForKey("_id")!
             ])
         { (result) -> Void in
             
@@ -69,6 +70,8 @@ class EditMyViewController: UIViewController {
                 for (key, value) in result["user"] as! [String: AnyObject] {
                     userDefault.setObject(value, forKey: key)
                 }
+                let homeControl = self.navigationController!.viewControllers.first as! HomeController
+                homeControl.isFromEditMy = true
                 self.navigationController?.popViewControllerAnimated(true)
                 self.navigationController?.navigationBarHidden = false
             }

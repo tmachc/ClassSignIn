@@ -71,7 +71,6 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
                 "type": userDefault.objectForKey("type")!
             ])
         { (result) -> Void in
-            print(result["list"])
             self.arrAttendanceData = result["list"] as! [Dictionary<String, AnyObject>]
             self.table.reloadData()
             self.refreshControl.endRefreshing()
