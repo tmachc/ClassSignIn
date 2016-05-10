@@ -30,6 +30,18 @@ class MyViewController: UIViewController, UITableViewDataSource, UITableViewDele
         self.parentViewController!.performSegueWithIdentifier("login", sender: nil)
     }
     
+    // ********* MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "editMy" {
+            let destinationController = segue.destinationViewController as! EditMyViewController
+            destinationController.row = sender!.row
+        }
+    }
+    
     // ********* MARK: - table
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,5 +73,13 @@ class MyViewController: UIViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        self.performSegueWithIdentifier("editMy", sender: indexPath)
     }
 }
+
+
+
+
+
+
+

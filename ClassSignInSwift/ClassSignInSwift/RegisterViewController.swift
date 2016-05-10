@@ -41,7 +41,7 @@ class RegisterViewController: UIViewController {
         if tfPasswordAgain.text == "" {
             return
         }
-        if tfPassword.text == tfPasswordAgain.text {
+        if tfPassword.text != tfPasswordAgain.text {
             return
         }
         // ******* 网络请求

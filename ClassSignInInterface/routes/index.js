@@ -72,6 +72,13 @@ register = function(req, callback) {
   });
 };
 
+// 修改信息
+editMy = function(req, callback) {
+  user.editMy(req, function(sendRes) {
+    callback(sendRes);
+  });
+};
+
 // ************************ 课程部分
 // 添加,修改课程
 editClass = function(req, callback) {

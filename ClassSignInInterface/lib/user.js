@@ -12,9 +12,7 @@ var userProvider = new UserProvider();
 exports.login = function(req, callback) {
     var password = req.query.password;
     var num = req.query.num;
-    console.log("num--->>>",num);
     userProvider.findOne({"num" : num}, {}, function(err, result){
-        console.log("result--->>>",result);
         if (err) {
             // 数据库错误
             logger.warn(global.warnCode.adminDbError,":",req.url,req.query);
@@ -44,7 +42,7 @@ exports.login = function(req, callback) {
     });
 };
 
-exports.register = function(err, result){
+exports.register = function(req, callback){
     var num = req.query.num;
     var password = req.query.password;
     var name= req.query.name;
@@ -70,7 +68,7 @@ exports.register = function(err, result){
             if (num.length == 6) {
                 user.type = "teacher";
             }
-            else if (num.length == 8) {
+            else if (num.length == 10) {
                 user.type = "student"
             }
             else {
@@ -84,6 +82,51 @@ exports.register = function(err, result){
                     callback(global.warnCode.adminDbError);
                 }
                 else {
+                    callback({code: 0, user: user});
+                }
+            });
+        }
+    });
+};
+
+exports.editMy = function(req, callback){
+    var userId = req.query.userId;
+    var name = req.query.name;
+    var num = req.query.num;
+    var sex = req.query.sex;
+    var age = req.query.age;
+    userProvider.findOne({_id: new ObjectID(userId)}, {}, function(err, result){
+        if (err) {
+            // 数据库错误
+            logger.warn(global.warnCode.adminDbError,":",req.url,req.query);
+            callback(global.warnCode.adminDbError);
+        }
+        else if (result == null) {
+            logger.warn(global.warnCode.userNotExistError,":",req.url,req.query);
+            callback(global.warnCode.userNotExistError);
+        }
+        else {
+            var user = {};
+            if (name != null && name != "" && name != undefined) {
+                user.name = name;
+            }
+            if (num != null && num != "" && num != undefined) {
+                user.num = num;
+            }
+            if (sex != null && sex != "" && sex != undefined) {
+                user.sex = sex;
+            }
+            if (age != null && age != "" && age != undefined) {
+                user.name = age;
+            }
+            userProvider.update({_id: new ObjectID(userId)}, {"$set": user}, function(err){
+                if (err) {
+                    // 数据库错误
+                    logger.warn(global.warnCode.adminDbError,":",req.url,req.query);
+                    callback(global.warnCode.adminDbError);
+                }
+                else {
+                    // 修改 class 里面的数据
                     callback({code: 0, user: user});
                 }
             });
