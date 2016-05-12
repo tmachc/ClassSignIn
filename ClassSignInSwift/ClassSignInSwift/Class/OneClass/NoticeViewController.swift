@@ -21,6 +21,9 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
         self.refreshControl = UIRefreshControl.init()
         self.refreshControl.addTarget(self, action: #selector(getNoticeListData), forControlEvents: UIControlEvents.ValueChanged)
         self.table.addSubview(self.refreshControl)
+        
+        // 去掉底下没有数据的cell
+        self.table.tableFooterView = UIView.init()
 
         // 获取通知数据
         self.getNoticeListData()
@@ -68,14 +71,18 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrNoticeData.count
     }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        let size = getSizeOfLabel(str: arrNoticeData[indexPath.row]["noticeContent"]!, width: WINDOW_WIDTH - 24, height: CGFloat.max, font: UIFont.systemFontOfSize(16))
+        return 24 + 30 + size.height + 6 + size.height/15
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: NoticeTableViewCell = tableView.dequeueReusableCellWithIdentifier("noticeCellID") as! NoticeTableViewCell
         cell.dicNoticeData = arrNoticeData[indexPath.row]
         return cell
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if userDefault.objectForKey("type")!.isEqual("teacher"){
             self.performSegueWithIdentifier("editNotice", sender: indexPath)

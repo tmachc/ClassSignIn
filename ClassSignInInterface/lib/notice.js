@@ -66,7 +66,7 @@ exports.editNotice = function(req, callback) {
             }
             else {
                 var json = {
-                    noticeName : className,
+                    noticeName : noticeName,
                     noticeContent : noticeContent,
                     updateTime : new Date()
                 };

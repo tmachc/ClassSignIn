@@ -23,6 +23,9 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
         self.refreshControl.addTarget(self, action: #selector(getHomeworkListData), forControlEvents: UIControlEvents.ValueChanged)
         self.table.addSubview(self.refreshControl)
         
+        // 去掉底下没有数据的cell
+        self.table.tableFooterView = UIView.init()
+        
         // 获取作业数据
         self.getHomeworkListData()
     }
@@ -69,7 +72,9 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
         return arrHomeworkData.count
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
+        let size = getSizeOfLabel(str: arrHomeworkData[indexPath.row]["homeworkContent"]!, width: WINDOW_WIDTH - 24, height: CGFloat.max, font: UIFont.systemFontOfSize(16))
+        print(size)
+        return 92 + size.height + 8
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: HomeworkTableViewCell = tableView.dequeueReusableCellWithIdentifier("homeworkCellID") as! HomeworkTableViewCell
@@ -82,5 +87,6 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
             self.performSegueWithIdentifier("editHomework", sender: indexPath)
         }
     }
-
+    
+    
 }
