@@ -36,7 +36,7 @@ class AttendanceTableViewCell: UITableViewCell {
             if self.dicAttendanceData["attendanceState"]!.isEqual("start") {
                 btnEndAttendance.alpha = 1
                 btnEndAttendance.setTitle("结束签到", forState: .Normal)
-                btnEndAttendance.backgroundColor = UIColor.redColor()
+                btnEndAttendance.backgroundColor = RGBColor(r: 185, g: 227, b: 133)
             }
         }
         else {

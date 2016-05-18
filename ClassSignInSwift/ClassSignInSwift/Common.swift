@@ -29,3 +29,7 @@ func getSizeOfLabel(str str: String, width: CGFloat, height: CGFloat, font: UIFo
     return labelsize
 }
 
+func RGBColor(r r:Int, g:Int, b:Int) -> UIColor {
+    return UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1)
+}
+

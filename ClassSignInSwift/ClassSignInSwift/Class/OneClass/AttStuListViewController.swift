@@ -19,6 +19,11 @@ class AttStuListViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         self.title = self.dicAttendance["attendanceName"] as? String
         self.getOneAttendanceData()
+        
+        let itemRight = UIBarButtonItem.init(title: "抽查", style: .Done, target: self, action: #selector(randomStu))
+        self.navigationItem.rightBarButtonItem = itemRight
+        
+        self.table.tableFooterView = UIView()
     }
     
     // MARK: - function
@@ -34,6 +39,23 @@ class AttStuListViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.arrStuData = self.dicAttendance["classMate"] as! Array
                 self.table.reloadData()
         }
+    }
+    
+    func randomStu() {
+        var arr = [Dictionary<String, AnyObject>]()
+        for item in arrStuData {
+            if item["attendanceState"] as! String == "4" {
+                arr.append(item)
+            }
+        }
+        
+        let randomNum = random() % arr.count
+        let dic = arr[randomNum]
+        
+        let alert = UIAlertController.init(title: "抽中学生", message: dic["studentName"] as? String, preferredStyle: UIAlertControllerStyle.Alert)
+        let cancel = UIAlertAction.init(title: "确定", style: .Cancel, handler: nil)
+        alert.addAction(cancel)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK: - table
