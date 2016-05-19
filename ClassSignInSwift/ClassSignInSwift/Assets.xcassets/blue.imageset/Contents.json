@@ -1,16 +1,16 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "Rainbow Abstract Background4.jpg",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
+      "filename" : "Rainbow Abstract Background4.jpg",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

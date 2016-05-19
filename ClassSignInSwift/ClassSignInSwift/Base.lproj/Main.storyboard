@@ -18,7 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QAD-lI-H9B">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellow" translatesAutoresizingMaskIntoConstraints="NO" id="dG4-bx-qwd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QAD-lI-H9B">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -28,7 +31,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bNB-Lt-L4j" id="fN5-RV-ptE">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -56,11 +61,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GO8-cn-ZZQ" firstAttribute="top" secondItem="QAD-lI-H9B" secondAttribute="bottom" id="44F-b8-YCI"/>
+                            <constraint firstItem="dG4-bx-qwd" firstAttribute="top" secondItem="QAD-lI-H9B" secondAttribute="top" id="E1R-8s-T6s"/>
                             <constraint firstItem="QAD-lI-H9B" firstAttribute="leading" secondItem="FQD-0U-eIa" secondAttribute="leading" id="Fa8-QD-oED"/>
                             <constraint firstItem="QAD-lI-H9B" firstAttribute="top" secondItem="Mv8-0x-Y5D" secondAttribute="bottom" id="QnA-vO-eNZ"/>
                             <constraint firstItem="GO8-cn-ZZQ" firstAttribute="top" secondItem="DPg-m3-vJe" secondAttribute="bottom" id="SbB-hg-A6g"/>
+                            <constraint firstItem="dG4-bx-qwd" firstAttribute="trailing" secondItem="QAD-lI-H9B" secondAttribute="trailing" id="U7M-ah-Gi6"/>
                             <constraint firstAttribute="trailing" secondItem="DPg-m3-vJe" secondAttribute="trailing" id="XBe-g6-mnK"/>
+                            <constraint firstItem="dG4-bx-qwd" firstAttribute="leading" secondItem="QAD-lI-H9B" secondAttribute="leading" id="coF-26-fay"/>
                             <constraint firstItem="DPg-m3-vJe" firstAttribute="leading" secondItem="FQD-0U-eIa" secondAttribute="leading" id="lZ2-4J-HZZ"/>
+                            <constraint firstItem="dG4-bx-qwd" firstAttribute="bottom" secondItem="QAD-lI-H9B" secondAttribute="bottom" id="wAT-1l-6Xt"/>
                             <constraint firstAttribute="trailing" secondItem="QAD-lI-H9B" secondAttribute="trailing" id="yCP-Wf-vxU"/>
                         </constraints>
                     </view>
@@ -1377,5 +1386,6 @@
         <image name="homework" width="25" height="25"/>
         <image name="my" width="25" height="25"/>
         <image name="notice" width="25" height="25"/>
+        <image name="yellow" width="500" height="500"/>
     </resources>
 </document>

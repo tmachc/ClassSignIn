@@ -55,6 +55,8 @@ class MyViewController: UIViewController, UITableViewDataSource, UITableViewDele
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        let cell: ClassTableViewCell = tableView.dequeueReusableCellWithIdentifier("myCellID") as! ClassTableViewCell
         let cell = UITableViewCell.init()
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clearColor()
         if indexPath.row == 0 {
             cell.textLabel?.text = "姓名: " + (userDefault.objectForKey("name") as! String)
         }
