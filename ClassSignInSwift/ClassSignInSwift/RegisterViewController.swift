@@ -42,20 +42,23 @@ class RegisterViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         self.hideKeyboard()
         // 先判断输入的是否为空
         if tfNum.text == "" {
-            
+            ShowAlert(target: self, message: "学号或教职工号不能为空")
             return
         }
         if tfName.text == "" {
-            
+            ShowAlert(target: self, message: "姓名不能为空")
             return
         }
         if tfPassword.text == "" {
+            ShowAlert(target: self, message: "密码不能为空")
             return
         }
         if tfPasswordAgain.text == "" {
+            ShowAlert(target: self, message: "密码不能为空")
             return
         }
         if tfPassword.text != tfPasswordAgain.text {
+            ShowAlert(target: self, message: "两次密码不一致")
             return
         }
         // ******* 网络请求
@@ -76,10 +79,7 @@ class RegisterViewController: UIViewController, UIScrollViewDelegate, UITextFiel
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }
             else {
-                let alert = UIAlertController.init(title: "提示", message: result["message"] as? String, preferredStyle: UIAlertControllerStyle.Alert)
-                let cancel = UIAlertAction.init(title: "确定", style: .Cancel, handler: nil)
-                alert.addAction(cancel)
-                self.presentViewController(alert, animated: true, completion: nil)
+                ShowAlert(target: self, message: result["message"] as! String)
             }
         }
     }

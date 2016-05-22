@@ -15,6 +15,7 @@ class MyViewController: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.table.tableFooterView = UIView()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -53,21 +54,22 @@ class MyViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell: ClassTableViewCell = tableView.dequeueReusableCellWithIdentifier("myCellID") as! ClassTableViewCell
-        let cell = UITableViewCell.init()
-        cell.contentView.backgroundColor = UIColor.clearColor()
-        cell.backgroundColor = UIColor.clearColor()
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCellID")! as UITableViewCell
         if indexPath.row == 0 {
-            cell.textLabel?.text = "姓名: " + (userDefault.objectForKey("name") as! String)
+            cell.textLabel?.text = "姓名: "
+            cell.detailTextLabel?.text = userDefault.objectForKey("name") as? String
         }
         else if indexPath.row == 1 {
-            cell.textLabel?.text = "学号: " + (userDefault.objectForKey("num") as! String)
+            cell.textLabel?.text = "学号: "
+            cell.detailTextLabel?.text = userDefault.objectForKey("num") as? String
         }
         else if indexPath.row == 2 {
-            cell.textLabel?.text = "性别: " + (userDefault.objectForKey("sex") as! String)
+            cell.textLabel?.text = "性别: "
+            cell.detailTextLabel?.text = userDefault.objectForKey("sex") as? String
         }
         else if indexPath.row == 3 {
-            cell.textLabel?.text = "年龄: " + (userDefault.objectForKey("age") as! String)
+            cell.textLabel?.text = "年龄: "
+            cell.detailTextLabel?.text = userDefault.objectForKey("age") as? String
         }
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell

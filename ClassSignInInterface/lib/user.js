@@ -65,7 +65,7 @@ exports.register = function(req, callback){
                 "sex" : "",
                 "age" : ""
             };
-            if (num.length == 6) {
+            if (num.length == 8) {
                 user.type = "teacher";
             }
             else if (num.length == 10) {

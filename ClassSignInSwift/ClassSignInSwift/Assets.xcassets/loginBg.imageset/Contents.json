@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "Rainbow Abstract Background1.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
+      "filename" : "loginBg.png",
       "scale" : "2x"
     },
     {

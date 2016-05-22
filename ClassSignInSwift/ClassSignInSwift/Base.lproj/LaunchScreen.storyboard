@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,33 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到管理系统" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eZ-Oe-ZAu">
-                                <rect key="frame" x="200" y="275" width="200" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-q8-FPM">
+                                <rect key="frame" x="0.0" y="-233.5" width="600" height="1067"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="4xM-3E-HrC"/>
-                                    <constraint firstAttribute="height" constant="50" id="9Tu-wv-ukZ"/>
+                                    <constraint firstAttribute="width" secondItem="ceu-q8-FPM" secondAttribute="height" multiplier="750/1334" id="R7c-Ql-Xy8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.08235294118" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by 付琦" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFY-yj-AE8">
-                                <rect key="frame" x="484" y="554" width="96" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="8SY-L6-7fP"/>
-                                    <constraint firstAttribute="width" constant="96" id="kr3-JM-C22"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.85598958329999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="8eZ-Oe-ZAu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2yx-zt-KWx"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="lFY-yj-AE8" secondAttribute="bottom" constant="20" id="36d-Dn-sIg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lFY-yj-AE8" secondAttribute="trailing" id="Pfg-Ru-UsV"/>
-                            <constraint firstItem="8eZ-Oe-ZAu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="g8Z-6b-aBG"/>
+                            <constraint firstItem="ceu-q8-FPM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="WmU-OT-HPX"/>
+                            <constraint firstItem="ceu-q8-FPM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hdX-nk-Z4f"/>
+                            <constraint firstItem="ceu-q8-FPM" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="qA7-2F-AY9"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -53,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="welcome" width="375" height="666"/>
+    </resources>
 </document>

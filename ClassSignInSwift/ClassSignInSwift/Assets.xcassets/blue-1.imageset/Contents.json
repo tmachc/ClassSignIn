@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "iphone",
+      "filename" : "blue.png",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "Rainbow Abstract Background4.jpg",
       "scale" : "2x"
     },
     {

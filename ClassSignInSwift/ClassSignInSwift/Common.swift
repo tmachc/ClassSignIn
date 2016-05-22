@@ -33,3 +33,10 @@ func RGBColor(r r:Int, g:Int, b:Int) -> UIColor {
     return UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1)
 }
 
+func ShowAlert(target target: UIViewController, message:String) {
+    let alert = UIAlertController.init(title: "提示", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    let cancel = UIAlertAction.init(title: "确定", style: .Cancel, handler: nil)
+    alert.addAction(cancel)
+    target.presentViewController(alert, animated: true, completion: nil)
+}
+
