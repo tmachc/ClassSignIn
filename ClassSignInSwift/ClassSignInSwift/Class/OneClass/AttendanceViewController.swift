@@ -73,9 +73,14 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
                 "type": userDefault.objectForKey("type")!
             ])
         { (result) -> Void in
-            self.arrAttendanceData = result["list"] as! [Dictionary<String, AnyObject>]
-            self.table.reloadData()
-            self.refreshControl.endRefreshing()
+            if result["code"]!.isEqual(0) {
+                self.arrAttendanceData = result["list"] as! [Dictionary<String, AnyObject>]
+                self.table.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+            else {
+                ShowAlert(target: self, message: result["message"] as! String)
+            }
         }
     }
 

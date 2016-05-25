@@ -36,9 +36,11 @@ class EditNoticeViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     func clickToAdd() {
         if tfNoticeName.text == "" {
+            ShowAlert(target: self, message: "通知名称不能为空")
             return
         }
         if tvNoticeContent.text == "" {
+            ShowAlert(target: self, message: "通知内容不能为空")
             return
         }
         var dic = [
@@ -57,6 +59,9 @@ class EditNoticeViewController: UIViewController, UITextFieldDelegate, UITextVie
             { (result) -> Void in
                 if result["code"]!.isEqual(0) {
                     self.navigationController?.popViewControllerAnimated(true)
+                }
+                else {
+                    ShowAlert(target: self, message: result["message"] as! String)
                 }
         })
         

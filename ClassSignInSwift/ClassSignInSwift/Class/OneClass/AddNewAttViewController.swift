@@ -43,6 +43,9 @@ class AddNewAttViewController: UIViewController {
                 if result["code"]!.isEqual(0) {
                     self.navigationController?.popViewControllerAnimated(true)
                 }
+                else {
+                    ShowAlert(target: self, message: result["message"] as! String)
+                }
         })
     }
 }

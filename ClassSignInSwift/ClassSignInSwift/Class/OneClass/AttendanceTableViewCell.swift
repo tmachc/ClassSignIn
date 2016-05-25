@@ -86,9 +86,9 @@ class AttendanceTableViewCell: UITableViewCell {
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
             params: dic ) { (result) in
-            if result["code"]!.isEqual(0) {
-                NSNotificationCenter.defaultCenter().postNotificationName("reloadList", object: nil)
-            }
+                if result["code"]!.isEqual(0) {
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadList", object: nil)
+                }
         }
     }
 }

@@ -60,9 +60,14 @@ class NoticeViewController: UIViewController, UITableViewDataSource, UITableView
                 "classId": oneClass.dicClassData["classId"]!
             ])
         { (result) -> Void in
-            self.arrNoticeData = result["list"] as! [Dictionary<String, String>]
-            self.table.reloadData()
-            self.refreshControl.endRefreshing()
+            if result["code"]!.isEqual(0) {
+                self.arrNoticeData = result["list"] as! [Dictionary<String, String>]
+                self.table.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+            else {
+                ShowAlert(target: self, message: result["message"] as! String)
+            }
         }
     }
 

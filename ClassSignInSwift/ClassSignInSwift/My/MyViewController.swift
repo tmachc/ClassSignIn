@@ -60,7 +60,12 @@ class MyViewController: UIViewController, UITableViewDataSource, UITableViewDele
             cell.detailTextLabel?.text = userDefault.objectForKey("name") as? String
         }
         else if indexPath.row == 1 {
-            cell.textLabel?.text = "学号: "
+            if userDefault.objectForKey("type")!.isEqual("teacher") {
+                cell.textLabel?.text = "学号: "
+            }
+            else {
+                cell.textLabel?.text = "教职工号: "
+            }
             cell.detailTextLabel?.text = userDefault.objectForKey("num") as? String
         }
         else if indexPath.row == 2 {

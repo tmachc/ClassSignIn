@@ -48,9 +48,14 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
                 "type": userDefault.objectForKey("type")!
             ])
         { (result) -> Void in
-            self.arrClassData = result["list"] as! [Dictionary<String, String>]
-            self.table.reloadData()
-            self.refreshControl.endRefreshing()
+            if result["code"]!.isEqual(0) {
+                self.arrClassData = result["list"] as! [Dictionary<String, String>]
+                self.table.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+            else {
+                ShowAlert(target: self, message: result["message"] as! String)
+            }
         }
     }
     

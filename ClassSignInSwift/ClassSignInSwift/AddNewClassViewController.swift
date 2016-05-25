@@ -51,6 +51,9 @@ class AddNewClassViewController: UIViewController {
                     if result["code"]!.isEqual(0) {
                         self.navigationController?.popViewControllerAnimated(true)
                     }
+                    else {
+                        ShowAlert(target: self, message: result["message"] as! String)
+                    }
             })
         }
         else {
@@ -67,6 +70,9 @@ class AddNewClassViewController: UIViewController {
                 { (result) -> Void in
                     if result["code"]!.isEqual(0) {
                         self.navigationController?.popViewControllerAnimated(true)
+                    }
+                    else {
+                        ShowAlert(target: self, message: result["message"] as! String)
                     }
             })
         }

@@ -45,7 +45,9 @@ class HomeController: UITabBarController {
         if (userDefault.objectForKey("num") != nil) {
             // 登录了
             let classViewController : ClassViewController = self.viewControllers?.first as! ClassViewController
-            classViewController.getClassData()
+            if self.selectedIndex == 0 {
+                classViewController.getClassData()
+            }
         }
         else {
             // 没登录，去登录

@@ -47,12 +47,15 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
     
     func clickToAddHomework() {
         if tfHomeworkName.text == "" {
+            ShowAlert(target: self, message: "作业名称不能为空")
             return
         }
         if tfHomeworkDate.text == "" {
+            ShowAlert(target: self, message: "作业时间不能为空")
             return
         }
         if tvHomeworkContent.text == "" {
+            ShowAlert(target: self, message: "作业内容不能为空")
             return
         }
         var dic = [
@@ -72,6 +75,9 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
             { (result) -> Void in
                 if result["code"]!.isEqual(0) {
                     self.navigationController?.popViewControllerAnimated(true)
+                }
+                else {
+                    ShowAlert(target: self, message: result["message"] as! String)
                 }
         })
 

@@ -60,9 +60,14 @@ class HomeworkViewController: UIViewController, UITableViewDataSource, UITableVi
                 "classId": oneClassVC.dicClassData["classId"]!
             ])
             { (result) -> Void in
-                self.arrHomeworkData = result["list"] as! [Dictionary<String, String>]
-                self.table.reloadData()
-                self.refreshControl.endRefreshing()
+                if result["code"]!.isEqual(0) {
+                    self.arrHomeworkData = result["list"] as! [Dictionary<String, String>]
+                    self.table.reloadData()
+                    self.refreshControl.endRefreshing()
+                }
+                else {
+                    ShowAlert(target: self, message: result["message"] as! String)
+                }
         }
     }
     

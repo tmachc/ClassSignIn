@@ -21,6 +21,9 @@ class EditMyViewController: UIViewController {
         let itemRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(editMy))
         self.navigationItem.rightBarButtonItem = itemRight
         
+        print(self.navigationItem.backBarButtonItem)
+        print(self.navigationItem.leftBarButtonItem)
+        
         switch row {
         case 0:
             self.title = "编辑姓名"
@@ -53,6 +56,12 @@ class EditMyViewController: UIViewController {
         textField.becomeFirstResponder()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        let homeControl = self.navigationController!.viewControllers.first as! HomeController
+        homeControl.isFromEditMy = true
+    }
+    
     func editMy() {
         if textField.text == "" {
             return
@@ -70,13 +79,13 @@ class EditMyViewController: UIViewController {
                 for (key, value) in result["user"] as! [String: AnyObject] {
                     userDefault.setObject(value, forKey: key)
                 }
-                let homeControl = self.navigationController!.viewControllers.first as! HomeController
-                homeControl.isFromEditMy = true
+//                let homeControl = self.navigationController!.viewControllers.first as! HomeController
+//                homeControl.isFromEditMy = true
                 self.navigationController?.popViewControllerAnimated(true)
                 self.navigationController?.navigationBarHidden = false
             }
             else {
-                
+                ShowAlert(target: self, message: result["message"] as! String)
             }
         }
     }

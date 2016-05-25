@@ -113,7 +113,12 @@ class AttStuListViewController: UIViewController, UITableViewDelegate, UITableVi
                 "studentId": studentId,
                 "state": state
             ]) { (result) in
-                self.getOneAttendanceData()
+                if result["code"]!.isEqual(0) {
+                    self.getOneAttendanceData()
+                }
+                else {
+                    ShowAlert(target: self, message: result["message"] as! String)
+                }
         }
     }
 }

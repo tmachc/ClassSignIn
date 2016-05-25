@@ -49,10 +49,11 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         self.hideKeyboard()
         // 先判断输入的是否为空
         if tfUserName.text == "" {
-            
+            ShowAlert(target: self, message: "学号或教职工号不能为空")
             return
         }
         if tfPassword.text == "" {
+            ShowAlert(target: self, message: "密码不能为空")
             return
         }
         
@@ -74,7 +75,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
                     self.navigationController?.navigationBarHidden = false
                 }
                 else {
-                    
+                    ShowAlert(target: self, message: result["message"] as! String)
                 }
         }
     }
