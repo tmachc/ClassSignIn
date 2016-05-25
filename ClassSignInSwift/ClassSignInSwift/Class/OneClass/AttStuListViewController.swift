@@ -49,6 +49,11 @@ class AttStuListViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
         
+        if arr.count == 0 {
+            ShowAlert(target: self, message: "暂无学生签到")
+            return
+        }
+        
         let randomNum = random() % arr.count
         let dic = arr[randomNum]
         
