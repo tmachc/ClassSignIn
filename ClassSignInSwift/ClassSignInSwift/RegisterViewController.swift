@@ -73,10 +73,7 @@ class RegisterViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         { (result) -> Void in
             
             if result["code"]!.isEqual(0) {
-                for (key, value) in result["user"] as! [String: AnyObject] {
-                    userDefault.setObject(value, forKey: key)
-                }
-                self.navigationController?.popToRootViewControllerAnimated(true)
+                self.navigationController?.popViewControllerAnimated(true)
             }
             else {
                 ShowAlert(target: self, message: result["message"] as! String)

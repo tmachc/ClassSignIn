@@ -29,6 +29,7 @@ class AddNewAttViewController: UIViewController {
     
     func clickToAdd() {
         if tfAttendanceName.text == "" {
+            ShowAlert(target: self, message: "考勤名称不能为空")
             return
         }
         

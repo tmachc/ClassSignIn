@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tfUserName.text = "2010011182"
+        tfUserName.text = "34201608"
         tfPassword.text = "123"
         
         // 定义所有子页面返回按钮的名称
