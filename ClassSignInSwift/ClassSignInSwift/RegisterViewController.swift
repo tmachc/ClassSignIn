@@ -73,7 +73,12 @@ class RegisterViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         { (result) -> Void in
             
             if result["code"]!.isEqual(0) {
-                self.navigationController?.popViewControllerAnimated(true)
+                let alert = UIAlertController.init(title: "提示", message: "注册成功，请登录", preferredStyle: .Alert)
+                let cancel = UIAlertAction.init(title: "确定", style: .Cancel, handler: { (cancel) in
+                    self.navigationController?.popViewControllerAnimated(true)
+                })
+                alert.addAction(cancel)
+                self.presentViewController(alert, animated: true, completion: nil)
             }
             else {
                 ShowAlert(target: self, message: result["message"] as! String)
