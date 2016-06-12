@@ -224,7 +224,7 @@
 				TargetAttributes = {
 					E7FADA1C1C06E41200991C06 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 973TH9R7F8;
+						DevelopmentTeam = GAY7Z86N8D;
 					};
 				};
 			};
@@ -453,6 +453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmachc.ClassSignInSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -468,6 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmachc.ClassSignInSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

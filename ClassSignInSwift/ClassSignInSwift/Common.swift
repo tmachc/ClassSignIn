@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 /* 接口地址 */
-let HttpUrl = "http://localhost:7700/v1?"
-//let HttpUrl = "http://169.254.68.141:7700/v1?"
+//let HttpUrl = "http://localhost:7700/v1?"
+let HttpUrl = "http://169.254.175.136:7700/v1?"
 
 /* 用于储存信息 Dictionary */
 let userDefault = NSUserDefaults.standardUserDefaults()

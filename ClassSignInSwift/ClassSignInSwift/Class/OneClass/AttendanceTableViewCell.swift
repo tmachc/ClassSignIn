@@ -22,13 +22,9 @@ class AttendanceTableViewCell: UITableViewCell {
     /** 考勤数据 */
     var dicAttendanceData = Dictionary<String, AnyObject>()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
         btnEndAttendance.alpha = 0
         var state = ""
         if userDefault.objectForKey("type")!.isEqual("teacher") {
@@ -41,7 +37,7 @@ class AttendanceTableViewCell: UITableViewCell {
         }
         else {
             self.labAttendanceState.alpha = 1
-            let arr = dicAttendanceData["classMate"] as! Array<Dictionary<String, AnyObject>>
+            let arr = dicAttendanceData["classMate"] as! [Dictionary<String, AnyObject>]
             state = arr[0]["attendanceState"] as! String
             if self.dicAttendanceData["attendanceState"]!.isEqual("start") && state == "1" {
                 self.labAttendanceState.alpha = 0
@@ -78,14 +74,18 @@ class AttendanceTableViewCell: UITableViewCell {
             "command": "endSignIn",
             "attendanceId": self.dicAttendanceData["attendanceId"]!
         ]
+        
         if userDefault.objectForKey("type")!.isEqual("student") {
             dic["command"] = "stuSignIn"
             dic["studentId"] = userDefault.objectForKey("_id")
             dic["state"] = "4"
         }
+        
         HttpManager.defaultManager.getRequest(
             url: HttpUrl,
-            params: dic ) { (result) in
+            params: dic
+            )
+        { (result) in
                 if result["code"]!.isEqual(0) {
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadList", object: nil)
                 }

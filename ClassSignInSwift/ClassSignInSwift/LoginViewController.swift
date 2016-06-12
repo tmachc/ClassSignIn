@@ -32,6 +32,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.navigationController?.navigationBarHidden = true
         
         // 设置监听 当键盘将要隐藏的时候 发通知给（调用）self.willHideKeyboard() 函数

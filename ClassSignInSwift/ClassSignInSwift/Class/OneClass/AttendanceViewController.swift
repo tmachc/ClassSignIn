@@ -40,9 +40,11 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
         */
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.getAttendanceList), name: "reloadList", object: nil)
-        
-        // 刷新列表
-        self.table.reloadData()
+    }
+    
+    override func removeFromParentViewController() {
+        super.removeFromParentViewController()
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "reloadList", object: nil)
     }
     
     // MARK: - Navigation
@@ -105,9 +107,5 @@ class AttendanceViewController: UIViewController, UITableViewDataSource, UITable
             let dicAttendance = arrAttendanceData[indexPath.row]
             self.performSegueWithIdentifier("attendanceList", sender: dicAttendance)
         }
-    }
-    
-    override func removeFromParentViewController() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "reloadList", object: nil)
     }
 }

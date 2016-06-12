@@ -24,18 +24,6 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.refreshControl.addTarget(self, action: #selector(getClassData), forControlEvents: UIControlEvents.ValueChanged)
         self.table.addSubview(self.refreshControl)
     }
-
-    // ********* MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "oneClass" {
-            let destinationController = segue.destinationViewController as! OneClassController
-            destinationController.dicClassData = arrClassData[sender!.row]
-        }
-    }
     
     // ********* MARK: - function
     
@@ -51,16 +39,12 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
             if result["code"]!.isEqual(0) {
                 self.arrClassData = result["list"] as! [Dictionary<String, String>]
                 self.table.reloadData()
-                self.refreshControl.endRefreshing()
             }
             else {
                 ShowAlert(target: self, message: result["message"] as! String)
             }
+            self.refreshControl.endRefreshing()
         }
-    }
-    
-    func addClass(sender: UIButton) {
-        self.performSegueWithIdentifier("addNewClass", sender: nil)
     }
     
     // ********* MARK: - table
@@ -81,5 +65,18 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("oneClass", sender: indexPath)
+    }
+    
+    // ********* MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "oneClass" {
+            let destinationController = segue.destinationViewController as! OneClassController
+            destinationController.dicClassData = arrClassData[sender!.row]
+        }
+    }
+    
+    func addClass(sender: UIButton) {
+        self.performSegueWithIdentifier("addNewClass", sender: nil)
     }
 }

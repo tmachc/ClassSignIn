@@ -11,7 +11,6 @@ import UIKit
 class AddNewClassViewController: UIViewController {
 
     @IBOutlet var tfClassNum: UITextField!
-    
     @IBOutlet var labIntro: UILabel!
     
     override func viewDidLoad() {
@@ -35,10 +34,11 @@ class AddNewClassViewController: UIViewController {
     }
     
     func clickToAdd() {
-        if tfClassNum.text == "" {
-            return
-        }
         if userDefault.objectForKey("type")!.isEqual("teacher") {
+            if tfClassNum.text == "" {
+                ShowAlert(target: self, message: "课程名称不能为空")
+                return
+            }
             HttpManager.defaultManager.getRequest(
                 url: HttpUrl,
                 params: [
@@ -57,6 +57,10 @@ class AddNewClassViewController: UIViewController {
             })
         }
         else {
+            if tfClassNum.text == "" {
+                ShowAlert(target: self, message: "课程号不能为空")
+                return
+            }
             HttpManager.defaultManager.getRequest(
                 url: HttpUrl,
                 params: [

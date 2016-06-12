@@ -44,7 +44,7 @@ class AttStuListViewController: UIViewController, UITableViewDelegate, UITableVi
     func randomStu() {
         var arr = [Dictionary<String, AnyObject>]()
         for item in arrStuData {
-            if item["attendanceState"] as! String == "4" {
+            if item["attendanceState"] as! String == "4" || item["attendanceState"] as! String == "2" {
                 arr.append(item)
             }
         }
