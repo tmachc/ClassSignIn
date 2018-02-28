@@ -3,6 +3,9 @@
  */
 
 require('./WarnConfig');
+var AipFace = require('baidu-aip-sdk').face; //这个‘baidu-ai’就是上面自定义的package.json中名字
+var fs = require('fs');
+
 var ObjectID = require("mongodb").ObjectID;
 var log4js = require('log4js');
 var logger = log4js.getLogger('normal');
@@ -128,12 +131,51 @@ exports.initData = function(req,callback){
     //        callback({"result":true,"list":result});
     //    }
     //});
-    callback({
+
+
+    var callback1 = req.query.callback;
+    var json = {
         "code" : 0,
-        "student" : student,
-        "theClass" : theClass,
-        "attendance" : attendance,
-        "homework" : homework,
+        // "student" : student,
+        // "theClass" : theClass,
+        // "attendance" : attendance,
+        // "homework" : homework,
         "notice" : notice
+    };
+
+    var str = JSON.stringify(json);
+
+    callback(callback1 + "(" + str + ")");
+};
+
+exports.testBaidu = function (req, callback) {
+
+    var APP_ID = "10858660";
+    var API_KEY = "ZLhxHOjbdY4VEt8VzIX9Sxv7";
+    var SECRET_KEY = "mOlxnVSZ5a4xutPMpx3oGruWlUvEi6Dd";
+
+    //读取待识别图像并base64编码
+    var bitmap = fs.readFileSync('image/001.jpeg'); // 相对于app.js
+    var base64str1 = new Buffer(bitmap).toString('base64');
+    var bitmap2 = fs.readFileSync('image/002.jpeg'); // 相对于app.js
+    var base64str2 = new Buffer(bitmap2).toString('base64');
+
+    var client = new AipFace(APP_ID, API_KEY, SECRET_KEY);
+    // client.addUser("test_user_001", "test_userInfo", "test_001", base64str1, {"name": "huangbo"}).then(function(result) {
+    //     console.log(result);
+    //     console.log(JSON.stringify(result));
+    // }).catch(function(err) {
+    //     // 如果发生网络错误
+    //     console.log(err);
+    // });
+    
+    client.multiIdentify("test_001", base64str2, {"detect_top_num": "2"}).then(function(result) {
+        console.log(result);
+        console.log(JSON.stringify(result));
+        callback({code: 0, result: result});
+    }).catch(function(err) {
+        // 如果发生网络错误
+        console.log(err);
     });
+
 };

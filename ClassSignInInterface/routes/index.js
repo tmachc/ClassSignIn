@@ -56,6 +56,12 @@ initData = function(req,callback){
 };
 
 
+testBaidu = function(req,callback){
+  test.testBaidu(req,function(sendRes){
+    callback(sendRes);
+  });
+};
+
 
 // ************************ 用户部分
 // 登录

@@ -14,9 +14,10 @@
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0",
     "fs-extra": "*",
-    "log4js":"*",
-    "mongodb":"*",
-    "jquery":"*",
-    "connect-multiparty":"*"
+    "log4js": "*",
+    "mongodb": "*",
+    "jquery": "*",
+    "baidu-aip-sdk": "*",
+    "connect-multiparty": "*"
   }
 }

@@ -29,6 +29,7 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
         if homeworkId == "" {
             self.title = "添加作业"
             self.tvHomeworkContent.text = ""
+            // 设置datepicker的时间为当前时间加上 3600秒（一个小时）
             datePicker.setDate(NSDate.init(timeIntervalSinceNow: 3600), animated: false)
         }
         else {
@@ -36,9 +37,13 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
             self.tfHomeworkName.text = dicHomeworkData["homeworkName"]
             self.tfHomeworkDate.text = dicHomeworkData["homeworkDate"]
             self.tvHomeworkContent.text = dicHomeworkData["homeworkContent"]
+            // 创建一个常量 是 日期格式转换类的实例
             let dateFormat = NSDateFormatter.init()
+            // 设置日期格式
             dateFormat.dateFormat = "yy年M月d日 HH:mm"
+            // 设置datepicker的时间为  （dicHomeworkData["homeworkDate"] 转换格式后的时间）
             datePicker.setDate(dateFormat.dateFromString(dicHomeworkData["homeworkDate"]!)!, animated: false)
+            // dicHomeworkData["homeworkDate"] 是 yy年M月d日 HH:mm 这样的字符串 上面这个是 String -> NSDate 因为.setDate()函数里面要传NSDate类型的参数
         }
         
         datePicker.alpha = 0
@@ -84,8 +89,12 @@ class EditHomeworkViewController: UIViewController, UITextFieldDelegate, UITextV
     }
     
     @IBAction func addDateToLabel(sender: UIButton?) {
+        // 创建一个常量 是 日期格式转换类的实例
         let dateFormat = NSDateFormatter.init()
+        // 设置日期格式
         dateFormat.dateFormat = "yy年M月d日 HH:mm"
+        // 设置输入框的文字为 （datePicker的日期 转换格式后的字符串）
+        // datePicker的日期是 NSDate类型的 现在要转换成 String
         tfHomeworkDate.text = dateFormat.stringFromDate(datePicker.date)
     }
 
