@@ -5,6 +5,7 @@
 require('./WarnConfig');
 var AipFace = require('baidu-aip-sdk').face; //这个‘baidu-ai’就是上面自定义的package.json中名字
 var fs = require('fs');
+var edge = require('edge');
 
 var ObjectID = require("mongodb").ObjectID;
 var log4js = require('log4js');
@@ -169,13 +170,30 @@ exports.testBaidu = function (req, callback) {
     //     console.log(err);
     // });
     
-    client.multiIdentify("test_001", base64str2, {"detect_top_num": "2"}).then(function(result) {
-        console.log(result);
-        console.log(JSON.stringify(result));
-        callback({code: 0, result: result});
-    }).catch(function(err) {
-        // 如果发生网络错误
-        console.log(err);
+    // client.multiIdentify("test_001", base64str2, {"detect_top_num": "2"}).then(function(result) {
+    //     console.log(result);
+    //     console.log(JSON.stringify(result));
+    //     callback({code: 0, result: result});
+    // }).catch(function(err) {
+    //     // 如果发生网络错误
+    //     console.log(err);
+    // });
+
+
+    // 定义方法
+    var StudyMath = edge.func({
+        assemblyFile: '../../_lib/Rocky.dll',             // assemblyFile为dll路径
+        atypeName: 'RockyNamespace.Study',   // RockyNamespace为命名空间，Study为类名
+        methodName: 'StudyMath'                     // StudyMath为方法名
+    });
+
+// s为传递方法传递的参数，result为方法返回的结果
+    StudyMath (s, function (error, result) {
+        if (error) throw error;
+        if (0 == result)
+            console.log("aaaaaaaaaaaaaaa"); // Success
+        else
+            console.log("bbbbbbbbbbbbbbb"); // Failure
     });
 
 };

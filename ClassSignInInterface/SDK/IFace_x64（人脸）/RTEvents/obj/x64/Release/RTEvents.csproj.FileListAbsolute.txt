@@ -1,0 +1,35 @@
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\Interop.zkemkeeper.dll
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\AxInterop.zkemkeeper.dll
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\RTEvents.csproj.ResolveComReference.cache
+D:\C#\IFace_X64\RTEvents\bin\x64\Release\RTEvents.exe
+D:\C#\IFace_X64\RTEvents\bin\x64\Release\RTEvents.pdb
+D:\C#\IFace_X64\RTEvents\bin\x64\Release\Interop.zkemkeeper.dll
+D:\C#\IFace_X64\RTEvents\bin\x64\Release\AxInterop.zkemkeeper.dll
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\ResolveAssemblyReference.cache
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\RTEvents.RTEventsMain.resources
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\RTEvents.Properties.Resources.resources
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\RTEvents.csproj.GenerateResource.Cache
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\RTEvents.exe
+D:\C#\IFace_X64\RTEvents\obj\x64\Release\RTEvents.pdb
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\obj\x64\Release\Interop.zkemkeeper.dll
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\obj\x64\Release\RTEvents.csproj.ResolveComReference.cache
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\obj\x64\Release\RTEvents.exe
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\bin\x64\Release\RTEvents.exe
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\bin\x64\Release\RTEvents.pdb
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\bin\x64\Release\Interop.zkemkeeper.dll
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\obj\x64\Release\RTEvents.csprojResolveAssemblyReference.cache
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\obj\x64\Release\RTEvents.RTEventsMain.resources
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\obj\x64\Release\RTEvents.Properties.Resources.resources
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\obj\x64\Release\RTEvents.csproj.GenerateResource.Cache
+F:\工作文档\脱机sdk\64位脱机通讯开发包\脱机通讯开发包(64bit_ Ver6.2.4.11)\Demo\C#\IFace_x64\RTEvents\obj\x64\Release\RTEvents.pdb
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\bin\x64\Release\RTEvents.exe
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\bin\x64\Release\RTEvents.pdb
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\bin\x64\Release\Interop.zkemkeeper.dll
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\obj\x64\Release\RTEvents.csprojResolveAssemblyReference.cache
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\obj\x64\Release\Interop.zkemkeeper.dll
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\obj\x64\Release\RTEvents.csproj.ResolveComReference.cache
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\obj\x64\Release\RTEvents.RTEventsMain.resources
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\obj\x64\Release\RTEvents.Properties.Resources.resources
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\obj\x64\Release\RTEvents.csproj.GenerateResource.Cache
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\obj\x64\Release\RTEvents.exe
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\RTEvents\obj\x64\Release\RTEvents.pdb

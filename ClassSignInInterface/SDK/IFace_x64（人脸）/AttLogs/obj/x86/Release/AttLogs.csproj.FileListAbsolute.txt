@@ -1,0 +1,9 @@
+D:\C#\IFace_X64\AttLogs\obj\x86\Release\Interop.zkemkeeper.dll
+D:\C#\IFace_X64\AttLogs\obj\x86\Release\AttLogs.csproj.ResolveComReference.cache
+D:\C#\IFace_X64\AttLogs\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\ruby\Desktop\最新sdk包\64位Demo\C#\IFace_x64（人脸）\AttLogs\obj\x86\Release\Interop.zkemkeeper.dll
+C:\Users\ruby\Desktop\最新sdk包\64位Demo\C#\IFace_x64（人脸）\AttLogs\obj\x86\Release\AttLogs.csproj.ResolveComReference.cache
+C:\Users\ruby\Desktop\最新sdk包\64位Demo\C#\IFace_x64（人脸）\AttLogs\obj\x86\Release\AttLogs.csprojResolveAssemblyReference.cache
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\AttLogs\obj\x86\Release\Interop.zkemkeeper.dll
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\AttLogs\obj\x86\Release\AttLogs.csproj.ResolveComReference.cache
+C:\Users\ruby\Desktop\sdk文件6.2.5.7\64位Demo\C#\IFace_x64（人脸）\AttLogs\obj\x86\Release\AttLogs.csprojResolveAssemblyReference.cache
